@@ -1,41 +1,31 @@
-let userImg = document.querySelector(".user-img")
-let userName = document.querySelector("#userName")
-let profile = document.querySelector(".profile");
-let menu = document.querySelector("#menu");
-let main = document.querySelector(".main");
-let sidebar = document.querySelector(".sidebar");
-let input = document.querySelector(".input");
-let messageIcon = document.querySelector(".message-icon");
-let messages = document.querySelector(".messages");
+const sidebarToggle = document.querySelector("#sidebar-toggle");
+sidebarToggle.addEventListener("click",function(){
+    document.querySelector("#sidebar").classList.toggle("collapsed");
+});
 
-userImg.addEventListener("click",()=>{
-    profile.classList.add("show")
+document.querySelector(".theme-toggle").addEventListener("click",() => {
+    toggleLocalStorage();
+    toggleRootClass();
+});
 
-    document.addEventListener("click",(e)=>{
-        if(e.target.tagName != "IMG" && e.target != !userImg && e.target.tagName != "H6"){
-            profile.classList.remove("show")
-        }
-    })
-})
-userName.addEventListener("click",()=>{
-    profile.classList.add("show")
-    document.addEventListener("click",(e)=>{
-        if(e.target.tagName != "H6" && e.target != !userName && e.target.tagName != "IMG"){
-            profile.classList.remove("show")
-        }
-    })
-})
+function toggleRootClass(){
+    const current = document.documentElement.getAttribute('data-bs-theme');
+    const inverted = current == 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-bs-theme',inverted);
+}
 
-messageIcon.addEventListener("click",()=>{
-    messages.classList.add("show")
-    document.addEventListener("click",(e)=>{
-        if(e.target.tagName != "I" && e.target != !messageIcon){
-            messages.classList.remove("show")
-        }
-    })
-})
+function toggleLocalStorage(){
+    if(isLight()){
+        localStorage.removeItem("light");
+    }else{
+        localStorage.setItem("light","set");
+    }
+}
 
-menu.addEventListener("click",()=>{
-    sidebar.classList.toggle("active");
-    main.classList.toggle("active");
-})
+function isLight(){
+    return localStorage.getItem("light");
+}
+
+if(isLight()){
+    toggleRootClass();
+}

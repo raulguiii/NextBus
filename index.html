@@ -1,1150 +1,279 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextBus - Transporte Escolar</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>NextBus</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="static/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
     <link rel="icon" type="image/x-icon" href="static/img/logopref.png" />
 </head>
+
 <body>
-    <div class="container-fluid px-0">
-        
-        
-        <!-- ========================= header ========================= -->
-        <div class="navbar fixed-top">
-            <a href="#" class="navbar-brand">
-                <i class="fa-solid fa-bus"></i>
-                <span>NextBus</span>
-            </a>
-            <div class="actions mr-auto d-flex align-items-center">
-                <span><i class='bx bx-menu menu mr-3' id="menu"></i></span>
-            </div>
-            <div class="user">
-                <span class="mr-2"><i class='bx bx-bell message-icon'>
-                    <div class="badge-icon bg-success">3</div>
-                </i></span>
-                <span><img src="static/img/icon_raul.PNG" class="ml-3 rounded-circle img-fluid user-img" alt=""></span>
-                <div class="user-descr">
-                    <h6 class="ml-3 mb-0" id="userName">Raul Guilherme<i class='bx bxs-down-arrow'></i></h6>
-                <small class="text-muted h6 ml-3">Admin</small>
-                </div>
+    <div class="wrapper">
+        <aside id="sidebar" class="js-sidebar">
+            <div class="h-100">
+                <div class="sidebar-logo">
+                    <a href="#" onclick="location.reload(); return false;"><img src="static/img/busOrange.png" style="width: 30px; height: 30px; margin-right: 8px;">NextBus</a>
+                </div>                
+                <ul class="sidebar-nav">
+                    <li class="sidebar-header">Menu</li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link tab-link" data-tab="todosdados">
+                            <i class="fa-solid fa-list pe-2"></i> <strong>INÍCIO</strong>
+                        </a>
+                    </li>
+                </ul>
+    
+                <ul class="sidebar-nav">
+                    <li class="sidebar-header">EMEB</li>
                 
-                <!-- messages  -->
-                <div class="messages rounded">
-                    <ul class="list-group">
-                        <li class="list-group-item d-flex align-items-center border-top-0">
-                            <div>
-                                <small class="text-muted">You have 3 new Messages</small>
-                                <small class="text-white bg-primary py-1 px-2 ml-3 view-all">view all</small>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center">
-                            <div class="mr-3"><span><i class='bx bxs-user-circle text-warning display-1'></i></span></div>
-                            <div>
-                                <h6 class="text-dark">Daadir Ali</h6>
-                                <small class="text-muted">Lorem ipsum dolor sit amet.</small> <br>
-                                <small class="text-muted">1 min. ago</small>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center">
-                            <div class="mr-3"><span><i class='bx bxs-user-circle text-danger display-1'></i></span></div>
-                            <div>
-                                <h6 class="text-capitalize text-dark">aweys nuux</h6>
-                                <small class="text-muted">Lorem ipsum dolor sit amet.</small> <br>
-                                <small class="text-muted">2 hr. ago</small>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center">
-                            <div class="mr-3"><span><i class='bx bxs-user-circle text-success display-1'></i></span></div>
-                            <div>
-                                <h6 class="text-dark text-capitalize">xaliimo dahir</h6>
-                                <small class="text-muted">Lorem ipsum dolor sit amet.</small> <br>
-                                <small class="text-muted">5 min. ago</small>
-                            </div>
-                        </li>
-                     </ul>
-                </div>
+                    <!-- EMEBS -->
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#Chiozo" data-bs-toggle="collapse">
+                            <i class="fa-solid fa-file-lines pe-2"></i> <strong>EMEB CHIOZO</strong>
+                        </a>
+                        <ul id="Chiozo" class="sidebar-dropdown list-unstyled collapse">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link tab-link" data-tab="ChiozoAlunos">ㅤㅤㅤ- Alunos </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link tab-link" data-tab="ChiozoOcorrencias">ㅤㅤㅤ- Ocorrências </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#ItaloAdami" data-bs-toggle="collapse">
+                            <i class="fa-solid fa-file-lines pe-2"></i> <strong>EMEB ITALO ADAMI</strong>
+                        </a>
+                        <ul id="ItaloAdami" class="sidebar-dropdown list-unstyled collapse">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link tab-link" data-tab="ItaloAdamiAlunos">ㅤㅤㅤ- Alunos</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link tab-link" data-tab="ItaloAdamiOcorrencias">ㅤㅤㅤ- Ocorrências</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#JoaquimPerpetuo" data-bs-toggle="collapse">
+                            <i class="fa-solid fa-file-lines pe-2"></i> <strong>EMEB JOAQUIM PERPÉTUO</strong>
+                        </a>
+                        <ul id="JoaquimPerpetuo" class="sidebar-dropdown list-unstyled collapse">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link tab-link" data-tab="JoaquimPerpetuoAlunos">ㅤㅤㅤ- Alunos</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link tab-link" data-tab="JoaquimPerpetuoOcorrencias">ㅤㅤㅤ- Ocorrências</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#MichelAlves" data-bs-toggle="collapse">
+                            <i class="fa-solid fa-file-lines pe-2"></i> <strong>EMEB MICHEL ALVES</strong>
+                        </a>
+                        <ul id="MichelAlves" class="sidebar-dropdown list-unstyled collapse">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link tab-link" data-tab="MichelAlvesAlunos">ㅤㅤㅤ- Alunos</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link tab-link" data-tab="MichelAlvesOcorrencias">ㅤㅤㅤ- Ocorrências</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
 
-                <!-- Profile -->
-                <div class="profile rounded">
-                    <div class="user-info">
-                        <span><img src="static/img/icon_raul.PNG" class="mr-2 rounded-circle img-fluid" alt=""></span> 
-                    <div class="user-name">
-                        <h5 class="mb-0">Raul Guilherme</h5>
-                    <small class="text-muted h6 ml-1">Admin</small>
-                    </div>
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item border-top text-muted">
-                            <span class="mr-3"><i class='bx bx-log-in'></i></span>
-                            <span>Sair</span>
-                        </li>
-                    </ul>
-                </div>
+
+
+                <ul class="sidebar-nav">
+                    <li class="sidebar-header">CRECHES</li>
+                
+                    <!--Creches-->
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#MamaDora" data-bs-toggle="collapse">
+                            <i class="fa-solid fa-file-lines pe-2"></i> <strong>CRECHE MAMA DORA</strong>
+                        </a>
+                        <ul id="MamaDora" class="sidebar-dropdown list-unstyled collapse">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link tab-link" data-tab="MamaDoraAlunos">ㅤㅤㅤ- Alunos </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link tab-link" data-tab="MamaDoraOcorrencias">ㅤㅤㅤ- Ocorrências </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#Rosalina" data-bs-toggle="collapse">
+                            <i class="fa-solid fa-file-lines pe-2"></i> <strong>CRECHE ROSALINA</strong>
+                        </a>
+                        <ul id="Rosalina" class="sidebar-dropdown list-unstyled collapse">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link tab-link" data-tab="RosalinaAlunos">ㅤㅤㅤ- Alunos </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link tab-link" data-tab="RosalinaOcorrencias">ㅤㅤㅤ- Ocorrências </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                
+                <ul class="sidebar-nav">
+                    <li class="sidebar-header">E.M.A</li>
+                
+                    <!--E.M.A-->
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#BeneditoVieira" data-bs-toggle="collapse">
+                            <i class="fa-solid fa-file-lines pe-2"></i> <strong>E.M.A Benedito Vieira</strong>
+                        </a>
+                        <ul id="BeneditoVieira" class="sidebar-dropdown list-unstyled collapse">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link tab-link" data-tab="BeneditoVieiraAlunos">ㅤㅤㅤ- Alunos </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link tab-link" data-tab="BeneditoVieiraOcorrencias">ㅤㅤㅤ- Ocorrências </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>  
+
             </div>
-        </div>
-
-
-        <!-- ============================== sidebar ============================== -->
-        <div class="sidebar">
-            <ul class="unstayled menu nav nav-pills flex-column">
-
-                <!-- Escola 1 -->
-                <li class="rounded active mb-1 list nav-item" data-toggle="collapse" data-target="#Escola1-content">
-                    <a href="#" class="text-decoration-none sub-menu">
-                      <div class="text d-flex">
-                        <span>
-                            <i class='bx bxs-dashboard'></i>
-                        </span>
-                        <div class="ml-4">
-                            <span class="text-capitalize">
-                                Escola 1
-                            </span>
-                        </div>
-                      </div>
-                      <span><i class='bx bx-chevron-down'></i></span>
-                    </a>
-                </li>
-                <div class="collapse" id="Escola1-content">
-                    <ul class="unstyled pl-5 ml-4 submenu  nav nav-pills flex-column">
-                     <li class="py-2 nav-item">
-                         <a data-toggle="pill"  href="#admin-dashboard"  class="text-decoration-none text-capitalize">
-                                Alunos
-                            </a>
-                     </li>
-                     <li class="py-2 nav-item">
-                         <a data-toggle="pill" href="#student-dashboard"  class="text-decoration-none text-capitalize">
-                                Ocorrências
-                            </a>
-                     </li>
-                    </ul>
-                 </div>
-
-
-                <!-- Escola 2 -->
-                <li class="rounded mb-1 list nav-item" data-toggle="collapse" data-target="#Escola2-content">
-                    <a href="#" class="text-decoration-none sub-menu">
-                        <div class="text d-flex">
-                          <span class="">
-                            <i class="fa-solid fa-children mr-1"></i>
-                          </span>
-                          <div class="ml-3">
-                            <span class="text-capitalize">
-                                Escola 2 
-                            </span>
-                          </div>
-                        </div>
-                        <span><i class='bx bx-chevron-down'></i></span>
-                      </a>
-                </li>
-                <div class="collapse" id="Escola2-content">
-                    <ul class="unstyled pl-5 ml-4 submenu nav nav-pills flex-column">
-                        <li class="py-2 nav-item">
-                            <a class="text-decoration-none text-capitalize" href="#all-students-page" data-toggle="pill">
-                                    Alunos
-                               </a>
-                        </li>
-                        <li class="py-2 nav-item">
-                            <a class="text-decoration-none text-capitalize" href="#student-admissin-page" data-toggle="pill">
-                                    Ocorrências
-                               </a>
-                        </li>
-                       </ul>
-                </div>
-            </ul>
-        </div>
-
-
-        <!-- ============================== Main ============================== -->
+        </aside>
+        
+        
+        <!--MENU SIDEBAR-->
         <div class="main">
-           <div class="tab-content">
-        <!-- ============================== Admin dashboard ============================== -->
-            <div class="tab-pane fade show active px-4" id="admin-dashboard">
-               <div class="container-fluid">
-                <div class="row">
-                    <div class="info-pages mb-3">
-                        <h3 class="text-capitalize">admin dashboard</h3>
-                        <p class="text-capitalize h6">home /<span> admin</span></p>
-                    </div>
-                </div>
-              <div class="row my-3">
-                <div class="box d-flex align-items-center justify-content-between my-2 w-100">
-                    <div class="cards">
-                        <div class="icon stud">
-                            <i class="fa-solid fa-children"></i>
-                        </div>
-                        <div class="desc">
-                            <h6 class="text-muted text-capitalize">students</h6>
-                            <h5 class="text-capitalize">150,000</h5>
-                        </div>
-                    </div>
-                    <div class="cards">
-                        <div class="icon teach">
-                            <i class="fa-solid fa-users"></i>
-                        </div>
-                        <div class="desc">
-                            <h6 class="text-muted text-capitalize">teachers</h6>
-                            <h5 class="text-capitalize">2,200</h5>
-                        </div>
-                    </div>
-                    <div class="cards">
-                        <div class="icon pare">
-                            <i class="fa-solid fa-user-group"></i>
-                        </div>
-                        <div class="desc">
-                            <h6 class="text-muted text-capitalize">parents</h6>
-                            <h5 class="text-capitalize">10,500</h5>
-                        </div>
-                    </div>
-                    <div class="cards">
-                        <div class="icon earn">
-                            <i class='bx bx-money'></i>
-                        </div>
-                        <div class="desc">
-                            <h6 class="text-muted text-capitalize">earnings</h6>
-                            <h5 class="text-capitalize">$1,900,000</h5>
-                        </div>
-                    </div>
-                </div> 
-              </div>
-               </div>
-               <div class="container-fluid">
-                <div class="row justify-content-between">
-                    <div class="earnings shadow bg-white p-4 rounded">
-                        <h4 class="text-capitalize mb-3">earnings</h4>
-                        <div class="information d-flex justify-content-between">
-                            <div class="inf">
-                                <h6 class="text-muted text-capitalize">total collections</h6>
-                                <h5 class="text-capitalize">$700,000</h5>
-                            </div>
-                            <div class="inf">
-                                <h6 class="text-muted text-capitalize">fees collection</h6>
-                                <h5 class="text-capitalize">$150,000</h5>
-                            </div>
-                            <div class="inf">
-                                <select class="text-muted text-capitalize border-0 bg-transparent">
-                                    <option selected>jan 03, 2023</option>
-                                    <option >dec 24, 2022</option>
-                                    <option >nov 12, 2022</option>
-                                </select>
-                            </div>
-                        </div>
-                        <img src="img/earnings.png" class="my-3 img-fluid" alt="">
-                    </div>
-                    <div class="expenses shadow bg-white p-4 rounded">
-                        <h4 class="text-capitalize mb-3">expenses</h4>
-                        <div class="information d-flex justify-content-between">
-                            <div class="inf">
-                                <small class="text-muted text-capitalize">jan 03, 2023</small>
-                                <small class="text-capitalize h6">$300,000</small>
-                            </div>
-                            <div class="inf">
-                                <small class="text-muted text-capitalize">sep 04, 2022</small>
-                                <small class="text-capitalize h6">$50,000</small>
-                            </div>
-                            <div class="inf">
-                                <small class="text-muted text-capitalize">mar 26, 2022</small>
-                                <small class="text-capitalize h6">$8,000</small>
-                            </div>
-                        </div>
-                        <img src="img/expenses.png" class="my-3 img-fluid" alt="">
-                    </div>
-                </div>
-                <div class="row justify-content-between my-4">
-                    <div class="studen shadow bg-white p-4 rounded">
-                        <h4 class="text-capitalize mb-3">students</h4>
-                        <img src="img/students.png" class="img-fluid" alt="">
-                        <div class="button d-flex align-items-center justify-content-between my-3">
-                            <div class="female">
-                                <div class="line my-2"></div>
-                                <h6 class="text-muted text-capitalize my-2">female students</h6>
-                                <h5>420,000</h5>
-                            </div>
-                            <div class="male">
-                                <div class="line my-2"></div>
-                                <h6 class="text-muted text-capitalize my-2">male students</h6>
-                                <h5>1,500,000</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="website-traf shadow bg-white p-4 rounded">
-                        <h4 class="text-capitalize mb-3">website traffic</h4>
-                                <div class="line my-2"></div>
-                                <h6 class="text-muted text-capitalize my-2">unique visitors</h6>
-                                <h5>25,000</h5>
-                                <table class="table my-5 table-hover">
-                                    <tr>
-                                        <td class="text-capitalize">direct</td>
-                                        <td class="text-capitalize">12,000</td>
-                                        <td class="text-capitalize">50%</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-capitalize">search</td>
-                                        <td class="text-capitalize">7,245</td>
-                                        <td class="text-capitalize">27%</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-capitalize">referrals</td>
-                                        <td class="text-capitalize">4,256</td>
-                                        <td class="text-capitalize">8%</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-capitalize">social</td>
-                                        <td class="text-capitalize">500</td>
-                                        <td class="text-capitalize">7%</td>
-                                    </tr>
-                                </table>
-                    </div>
-                </div>
-                <div class="row my-3">
-                   <div class="col text-center px-0">
-                    <div class="icons d-flex jutify-content-between">
-                        <div class="cards face">
-                            <div class="icon">
-                                <i class='bx bxl-facebook'></i>
-                            </div>
-                            <div class="desc">
-                                <h6 class="text-capitalize">like us on facebook</h6>
-                                <h5 class="text-capitalize">300,000</h5>
-                            </div>
-                        </div>
-                        <div class="cards twitt">
-                            <div class="icon">
-                                <i class='bx bxl-twitter'></i>
-                            </div>
-                            <div class="desc">
-                                <h6 class="text-capitalize">flow us on twitter</h6>
-                                <h5 class="text-capitalize">5,000,000</h5>
-                            </div>
-                        </div>
-                        <div class="cards instag">
-                            <div class="icon">
-                                <i class='bx bxl-instagram'></i>
-                            </div>
-                            <div class="desc">
-                                <h6 class="text-capitalize">flow us on instagram</h6>
-                                <h5 class="text-capitalize">1,11,000</h5>
-                            </div>
-                        </div>
-                        <div class="cards linked">
-                            <div class="icon">
-                                <i class='bx bxl-linkedin'></i>
-                            </div>
-                            <div class="desc">
-                                <h6 class="text-capitalize">flow us on linkedin</h6>
-                                <h5 class="text-capitalize">500,000</h5>
-                            </div>
-                        </div>
-                    </div> 
-                   </div>
-                </div>
-                
-               </div>
-            </div>
-        <!-- ============================== student dashboard ============================== -->
-            <div class="tab-pane fade px-4" id="student-dashboard">
-               <div class="container-fluid">
-                <div class="row">
-                    <div class="info-pages mb-3">
-                        <h3 class="text-capitalize">student dashboard</h3>
-                        <p class="text-capitalize h6">home /<span> student</span></p>
-                    </div>
-                </div>
-                <div class="row my-4">
-                    <div class="col shadow bg-white p-4 rounded student-info">
-                    <h4 class="text-capitalize mb-3">about me</h4>
-                        <div class="d-flex align-items-center">
-                            <div class="mr-3">
-                                <span><i class='bx bxs-user-circle text-primary display-2'></i></span>
-                            </div>
-                            <div>
-                                <h5 class="h5">Jessia Rose</h5>
-                                <h6 class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h6>
-                            </div>
-                        </div>
-                        <table class="table table-borderless">
-                            <tr>
-                                <td class="text-muted text-capitalize">name:</td>
-                                <td class="text-capitalize">Jessia Rose</td>
-                            </tr>
-                            <tr>
-                                <td class="text-muted text-capitalize">Gender:</td>
-                                <td class="text-capitalize">female</td>
-                            </tr>
-                            <tr>
-                                <td class="text-muted text-capitalize">father name:</td>
-                                <td class="text-capitalize">fahim rahman</td>
-                            </tr>
-                            <tr>
-                                <td class="text-muted text-capitalize">mother name:</td>
-                                <td class="text-capitalize">janatul kazi</td>
-                            </tr>
-                            <tr>
-                                <td class="text-muted text-capitalize">date of birth:</td>
-                                <td class="text-capitalize">07.08.2006</td>
-                            </tr>
-                            <tr>
-                                <td class="text-muted text-capitalize">father occubation:</td>
-                                <td class="text-capitalize">graphic designer</td>
-                            </tr>
-                            <tr>
-                                <td class="text-muted text-capitalize">email:</td>
-                                <td class="text-capitalize">jessiarose@gmail.com</td>
-                            </tr>
-                            <tr>
-                                <td class="text-muted text-capitalize">Admission Date:</td>
-                                <td class="text-capitalize">05.01.2019</td>
-                            </tr>
-                            <tr>
-                                <td class="text-muted text-capitalize">Class:</td>
-                                <td class="text-capitalize">2</td>
-                            </tr>
-                            <tr>
-                                <td class="text-muted text-capitalize">Section:</td>
-                                <td class="text-capitalize">pink</td>
-                            </tr>
-                            <tr>
-                                <td class="text-muted text-capitalize">Roll:</td>
-                                <td class="text-capitalize">10005</td>
-                            </tr>
-                            <tr>
-                                <td class="text-muted text-capitalize">Adress:</td>
-                                <td class="text-capitalize">House #10, Road #6, kaaraan</td>
-                            </tr>
-                            <tr>
-                                <td class="text-muted text-capitalize">phone:</td>
-                                <td class="text-capitalize">+252 61 7 726267</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-              <div class="row my-3">
-                <div class="box d-flex align-items-center justify-content-between my-2 w-100">
-                    <div class="cards">
-                        <div class="icon stud">
-                            <i class='bx bxs-bell'></i>
-                        </div>
-                        <div class="desc">
-                            <h6 class="text-muted text-capitalize">notifications</h6>
-                            <h5 class="text-capitalize">04</h5>
-                        </div>
-                    </div>
-                    <div class="cards">
-                        <div class="icon teach">
-                            <i>%</i>
-                        </div>
-                        <div class="desc">
-                            <h6 class="text-muted text-capitalize">attendence</h6>
-                            <h5 class="text-capitalize">94%</h5>
-                        </div>
-                    </div>
-                    <div class="cards">
-                        <div class="icon pare">
-                            <i class='bx bx-library'></i>
-                        </div>
-                        <div class="desc">
-                            <h6 class="text-muted text-capitalize">books</h6>
-                            <h5 class="text-capitalize">14</h5>
-                        </div>
-                    </div>
-                    <div class="cards">
-                        <div class="icon earn">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </div>
-                        <div class="desc">
-                            <h6 class="text-muted text-capitalize">all exams</h6>
-                            <h5 class="text-capitalize">88%</h5>
-                        </div>
-                    </div>
-                </div> 
-              </div>
-               </div>
-               <div class="container-fluid">
-                <div class="row justify-content-between">
-                 <div class="col shadow bg-white p-4 rounded">
-                    <h4 class="text-capitalize mb-3">all exam results</h4>
-                    <div class="header-result">
-                        <input type="search" class="border-0 bg-light p-2 w-40" placeholder="Search by Exam..">
-                        <input type="search" class="border-0 bg-light p-2" placeholder="Search by Subject..">
-                        <input type="search" class="border-0 bg-light p-2" placeholder="dd/mm/yyyy">
-                        <button class="btn btn-warning text-white">SEARCH</button>
-                    </div>
-                   <div class="table-responsive-xl">
-                    <table class="table my-4 table-hover table-striped table-hover">
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <th>ID</th>
-                            <th>Exam Name</th>
-                            <th>Subject</th>
-                            <th>Garade</th>
-                            <th>Percent</th>
-                            <th>Date</th>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>#0021</td>
-                            <td>Class Test</td>
-                            <td>English</td>
-                            <td>A</td>
-                            <td>99.00 > 100</td>
-                            <td>22/02/2021</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>#0021</td>
-                            <td>Mid Term</td>
-                            <td>Chemistry</td>
-                            <td>D</td>
-                            <td>70.00 > 100</td>
-                            <td>22/02/2021</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>#0021</td>
-                            <td>Class Test</td>
-                            <td>English</td>
-                            <td>C</td>
-                            <td>80.00 > 100</td>
-                            <td>22/02/2021</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>#0021</td>
-                            <td>Final</td>
-                            <td>English</td>
-                            <td>A</td>
-                            <td>99.00 > 100</td>
-                            <td>22/02/2021</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>#0021</td>
-                            <td>First Semester</td>
-                            <td>Chemistry</td>
-                            <td>A</td>
-                            <td>99.00 > 100</td>
-                            <td>22/02/2021</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>#0021</td>
-                            <td>Class Test</td>
-                            <td>English</td>
-                            <td>A</td>
-                            <td>99.00 > 100</td>
-                            <td>22/02/2021</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>#0021</td>
-                            <td>Class Test</td>
-                            <td>Chemistry</td>
-                            <td>A</td>
-                            <td>99.00 > 100</td>
-                            <td>22/02/2021</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>#0021</td>
-                            <td>Mid Term</td>
-                            <td>English</td>
-                            <td>B</td>
-                            <td>90.00 > 100</td>
-                            <td>22/02/2021</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>#0021</td>
-                            <td>Class Test</td>
-                            <td>English</td>
-                            <td>A</td>
-                            <td>99.00 > 100</td>
-                            <td>22/02/2021</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>#0021</td>
-                            <td>Class Test</td>
-                            <td>English</td>
-                            <td>C</td>
-                            <td>80.00 > 100</td>
-                            <td>22/02/2021</td>
-                        </tr>
-                    </table>
-                   </div>
-                 </div>
-                </div>
-                <div class="row justify-content-between my-4">
-                    <div class="studen shadow bg-white p-4 rounded">
-                        <h4 class="text-capitalize mb-3">attendence</h4>
-                        <img src="img/students.png" class="img-fluid" alt="">
-                        <div class="button d-flex align-items-center justify-content-between my-3">
-                            <div class="female">
-                                <div class="line my-2"></div>
-                                <h6 class="text-muted text-capitalize my-2">absent</h6>
-                                <h5>28.2%</h5>
-                            </div>
-                            <div class="male">
-                                <div class="line my-2"></div>
-                                <h6 class="text-muted text-capitalize my-2">present</h6>
-                                <h5>65.8%</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="website-traf notification shadow bg-white p-4 rounded">
-                        <h4 class="text-capitalize mb-3">notifications</h4>
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <span class="text-white bg-success p-2 my-3">16 june, 2022</span>
-                                <h6 class="mt-3">Great School manag mene esom tus eleifend lectus sed maximus mi faucibusnting.</h6>
-                                <small class="text-muted">Jennyfar Lopez / 5 min ago</small>
-                            </li>
-                            <li class="list-group-item">
-                                <span class="text-white bg-success p-2 my-3">16 june, 2022</span>
-                                <h6 class="mt-3">Great School manag mene esom tus eleifend lectus sed maximus mi faucibusnting.</h6>
-                                <small class="text-muted">Jennyfar Lopez / 5 min ago</small>
-                            </li>
-                            <li class="list-group-item">
-                                <span class="text-white bg-success p-2 my-3">16 june, 2022</span>
-                                <h6 class="mt-3">Great School manag mene esom tus eleifend lectus sed maximus mi faucibusnting.</h6>
-                                <small class="text-muted">Jennyfar Lopez / 5 min ago</small>
-                            </li>
-                            <li class="list-group-item">
-                                <span class="text-white bg-success p-2 my-3">16 june, 2022</span>
-                                <h6 class="mt-3">Great School manag mene esom tus eleifend lectus sed maximus mi faucibusnting.</h6>
-                                <small class="text-muted">Jennyfar Lopez / 5 min ago</small>
-                            </li>
-                            <li class="list-group-item">
-                                <span class="text-white bg-success p-2 my-3">16 june, 2022</span>
-                                <h6 class="mt-3">Great School manag mene esom tus eleifend lectus sed maximus mi faucibusnting.</h6>
-                                <small class="text-muted">Jennyfar Lopez / 5 min ago</small>
-                            </li>
-                            <li class="list-group-item">
-                                <span class="text-white bg-success p-2 my-3">16 june, 2022</span>
-                                <h6 class="mt-3">Great School manag mene esom tus eleifend lectus sed maximus mi faucibusnting.</h6>
-                                <small class="text-muted">Jennyfar Lopez / 5 min ago</small>
-                            </li>
-                        </ul>  
-                    </div>
-                </div>
-                
-               </div>
-            </div>
-
-              <!-- ============================== all students page ============================== -->
-            <div class="tab-pane fade px-4" id="all-students-page">
-                <div class="container-fluid">
-                 <div class="row">
-                     <div class="info-pages mb-3">
-                         <h3 class="text-capitalize">students</h3>
-                         <p class="text-capitalize h6">home /<span> all students</span></p>
-                     </div>
-                 </div>
-                </div>
-                <div class="container-fluid">
-                 <div class="row justify-content-between my-4">
-                  <div class="col shadow bg-white p-4 rounded">
-                     <h4 class="text-capitalize mb-3">all students</h4>
-                     <div class="header-result">
-                         <input type="search" class="border-0 bg-light p-2 w-40" placeholder="Search by Roll..">
-                         <input type="search" class="border-0 bg-light p-2" placeholder="Search by Name..">
-                         <input type="search" class="border-0 bg-light p-2" placeholder="Search by Class..">
-                         <button class="btn btn-warning text-white">SEARCH</button>
-                     </div>
-                    <div class="table-responsive text-nowrap">
-                     <table class="table my-4 table-hover table-striped table-hover w-auto">
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <th>Roll</th>
-                             <th>Photo</th>
-                             <th>Name</th>
-                             <th>Gender</th>
-                             <th>Class</th>
-                             <th>Section</th>
-                             <th>Parents</th>
-                             <th>Address</th>
-                             <th>Date Of Birth</th>
-                             <th>Phone</th>
-                             <th>E-mail</th>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0021</td>
-                             <td><i class='bx bxs-user-circle text-primary h4'></i></td>
-                             <td>Yoonis</td>
-                             <td>Male</td>
-                             <td>2</td>
-                             <td>A</td>
-                             <td>Farah Ali</td>
-                             <td>TA-107, hodan</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>yoonka22@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0023</td>
-                             <td><i class='bx bxs-user-circle text-dark h4'></i></td>
-                             <td>Cali</td>
-                             <td>Male</td>
-                             <td>3</td>
-                             <td>C</td>
-                             <td>Yaxye Farax</td>
-                             <td>TA-88, Shibis</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>cali44@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0025</td>
-                             <td><i class='bx bxs-user-circle text-warning h4'></i></td>
-                             <td>Farxiyo</td>
-                             <td>Female</td>
-                             <td>1</td>
-                             <td>B</td>
-                             <td>Nuux Cali</td>
-                             <td>TA-34, Warta-Nabada</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>farxiyo24@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0021</td>
-                             <td><i class='bx bxs-user-circle text-primary h4'></i></td>
-                             <td>Yoonis</td>
-                             <td>Male</td>
-                             <td>2</td>
-                             <td>A</td>
-                             <td>Farah Ali</td>
-                             <td>TA-107, hodan</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>yoonka22@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0023</td>
-                             <td><i class='bx bxs-user-circle text-dark h4'></i></td>
-                             <td>Cali</td>
-                             <td>Male</td>
-                             <td>3</td>
-                             <td>C</td>
-                             <td>Yaxye Farax</td>
-                             <td>TA-88, Shibis</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>cali44@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0025</td>
-                             <td><i class='bx bxs-user-circle text-warning h4'></i></td>
-                             <td>Farxiyo</td>
-                             <td>Female</td>
-                             <td>1</td>
-                             <td>B</td>
-                             <td>Nuux Cali</td>
-                             <td>TA-34, Warta-Nabada</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>farxiyo24@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0021</td>
-                             <td><i class='bx bxs-user-circle text-primary h4'></i></td>
-                             <td>Yoonis</td>
-                             <td>Male</td>
-                             <td>2</td>
-                             <td>A</td>
-                             <td>Farah Ali</td>
-                             <td>TA-107, hodan</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>yoonka22@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0023</td>
-                             <td><i class='bx bxs-user-circle text-dark h4'></i></td>
-                             <td>Cali</td>
-                             <td>Male</td>
-                             <td>3</td>
-                             <td>C</td>
-                             <td>Yaxye Farax</td>
-                             <td>TA-88, Shibis</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>cali44@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0025</td>
-                             <td><i class='bx bxs-user-circle text-warning h4'></i></td>
-                             <td>Farxiyo</td>
-                             <td>Female</td>
-                             <td>1</td>
-                             <td>B</td>
-                             <td>Nuux Cali</td>
-                             <td>TA-34, Warta-Nabada</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>farxiyo24@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0021</td>
-                             <td><i class='bx bxs-user-circle text-primary h4'></i></td>
-                             <td>Yoonis</td>
-                             <td>Male</td>
-                             <td>2</td>
-                             <td>A</td>
-                             <td>Farah Ali</td>
-                             <td>TA-107, hodan</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>yoonka22@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0023</td>
-                             <td><i class='bx bxs-user-circle text-dark h4'></i></td>
-                             <td>Cali</td>
-                             <td>Male</td>
-                             <td>3</td>
-                             <td>C</td>
-                             <td>Yaxye Farax</td>
-                             <td>TA-88, Shibis</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>cali44@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0025</td>
-                             <td><i class='bx bxs-user-circle text-warning h4'></i></td>
-                             <td>Farxiyo</td>
-                             <td>Female</td>
-                             <td>1</td>
-                             <td>B</td>
-                             <td>Nuux Cali</td>
-                             <td>TA-34, Warta-Nabada</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>farxiyo24@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0021</td>
-                             <td><i class='bx bxs-user-circle text-primary h4'></i></td>
-                             <td>Yoonis</td>
-                             <td>Male</td>
-                             <td>2</td>
-                             <td>A</td>
-                             <td>Farah Ali</td>
-                             <td>TA-107, hodan</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>yoonka22@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0023</td>
-                             <td><i class='bx bxs-user-circle text-dark h4'></i></td>
-                             <td>Cali</td>
-                             <td>Male</td>
-                             <td>3</td>
-                             <td>C</td>
-                             <td>Yaxye Farax</td>
-                             <td>TA-88, Shibis</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>cali44@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0025</td>
-                             <td><i class='bx bxs-user-circle text-warning h4'></i></td>
-                             <td>Farxiyo</td>
-                             <td>Female</td>
-                             <td>1</td>
-                             <td>B</td>
-                             <td>Nuux Cali</td>
-                             <td>TA-34, Warta-Nabada</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>farxiyo24@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0021</td>
-                             <td><i class='bx bxs-user-circle text-primary h4'></i></td>
-                             <td>Yoonis</td>
-                             <td>Male</td>
-                             <td>2</td>
-                             <td>A</td>
-                             <td>Farah Ali</td>
-                             <td>TA-107, hodan</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>yoonka22@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0023</td>
-                             <td><i class='bx bxs-user-circle text-dark h4'></i></td>
-                             <td>Cali</td>
-                             <td>Male</td>
-                             <td>3</td>
-                             <td>C</td>
-                             <td>Yaxye Farax</td>
-                             <td>TA-88, Shibis</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>cali44@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0025</td>
-                             <td><i class='bx bxs-user-circle text-warning h4'></i></td>
-                             <td>Farxiyo</td>
-                             <td>Female</td>
-                             <td>1</td>
-                             <td>B</td>
-                             <td>Nuux Cali</td>
-                             <td>TA-34, Warta-Nabada</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>farxiyo24@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0021</td>
-                             <td><i class='bx bxs-user-circle text-primary h4'></i></td>
-                             <td>Yoonis</td>
-                             <td>Male</td>
-                             <td>2</td>
-                             <td>A</td>
-                             <td>Farah Ali</td>
-                             <td>TA-107, hodan</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>yoonka22@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0023</td>
-                             <td><i class='bx bxs-user-circle text-dark h4'></i></td>
-                             <td>Cali</td>
-                             <td>Male</td>
-                             <td>3</td>
-                             <td>C</td>
-                             <td>Yaxye Farax</td>
-                             <td>TA-88, Shibis</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>cali44@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0025</td>
-                             <td><i class='bx bxs-user-circle text-warning h4'></i></td>
-                             <td>Farxiyo</td>
-                             <td>Female</td>
-                             <td>1</td>
-                             <td>B</td>
-                             <td>Nuux Cali</td>
-                             <td>TA-34, Warta-Nabada</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>farxiyo24@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0021</td>
-                             <td><i class='bx bxs-user-circle text-primary h4'></i></td>
-                             <td>Yoonis</td>
-                             <td>Male</td>
-                             <td>2</td>
-                             <td>A</td>
-                             <td>Farah Ali</td>
-                             <td>TA-107, hodan</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>yoonka22@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0023</td>
-                             <td><i class='bx bxs-user-circle text-dark h4'></i></td>
-                             <td>Cali</td>
-                             <td>Male</td>
-                             <td>3</td>
-                             <td>C</td>
-                             <td>Yaxye Farax</td>
-                             <td>TA-88, Shibis</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>cali44@gmail.com</td>
-                         </tr>
-                         <tr>
-                             <td><input type="checkbox"></td>
-                             <td>#0025</td>
-                             <td><i class='bx bxs-user-circle text-warning h4'></i></td>
-                             <td>Farxiyo</td>
-                             <td>Female</td>
-                             <td>1</td>
-                             <td>B</td>
-                             <td>Nuux Cali</td>
-                             <td>TA-34, Warta-Nabada</td>
-                             <td>02/05/2001</td>
-                             <td>+252 61 5 725273</td>
-                             <td>farxiyo24@gmail.com</td>
-                         </tr>
-                        
-                     </table>
-                    </div>
-                  </div>
-                 </div>
-                 
-                </div>
-             </div>
-              <!-- ============================== student admission page ============================== -->
-            <div class="tab-pane fade px-4" id="student-admissin-page">
-                <div class="container-fluid">
-                 <div class="row">
-                     <div class="info-pages mb-3">
-                         <h3 class="text-capitalize">students</h3>
-                         <p class="text-capitalize h6">home /<span> student admit form</span></p>
-                     </div>
-                 </div>
-                </div>
-                <div class="container-fluid">
-                 <div class="row justify-content-between my-4">
-                  <div class="col shadow bg-white p-4 rounded">
-                     <h4 class="text-capitalize mb-3">add new student</h4>
-                     <div class="row form-desing my-4">
-                        <div class="col-md-3 mt-2 mt-md-0">
-                            <label class="text-capitalize">first name *</label><br>
-                            <input type="text">
-                        </div>
-                        <div class="col-md-3 mt-3 mt-md-0">
-                            <label class="text-capitalize">last name *</label><br>
-                            <input type="text">
-                        </div>
-                        <div class="col-md-3 mt-3 mt-md-0">
-                            <label class="text-capitalize">Gender *</label><br>
-                            <select >
-                                <option selected>Please Select Gender</option>
-                                <option>Male</option>
-                                <option>Female</option>
-                            </select>
-                        </div>
-                        <div class="col-md-3 mt-3 mt-md-0">
-                            <label class="text-capitalize">date of birth *</label><br>
-                            <input type="date">
-                        </div>
-                     </div>
-                     <div class="row form-desing my-4">
-                        <div class="col-md-3 mt-2 mt-md-0">
-                            <label class="text-capitalize">roll *</label><br>
-                            <input type="text">
-                        </div>
-                        <div class="col-md-3 mt-3 mt-md-0">
-                            <label class="text-capitalize">blood group *</label><br>
-                            <select >
-                                <option selected>Please Select group</option>
-                                <option>A+</option>
-                                <option>B+</option>
-                                <option>A-</option>
-                                <option>B-</option>
-                                <option>O+</option>
-                                <option>O-</option>
-                            </select>
-                        </div>
-                        <div class="col-md-3 mt-3 mt-md-0">
-                            <label class="text-capitalize">religion *</label><br>
-                            <select >
-                                <option selected>Please Select religion</option>
-                                <option>Islam</option>
-                                <option>Christan</option>
-                                <option>Hindu</option>
-                                <option>Others</option>
-                            </select>
-                        </div>
-                        <div class="col-md-3 mt-3 mt-md-0">
-                            <label class="text-capitalize">e-mail *</label><br>
-                            <input type="email">
-                        </div>
-                     </div>
-                     <div class="row form-desing my-3">
-                        <div class="col-md-3 mt-2 mt-md-0">
-                            <label class="text-capitalize">Class *</label><br>
-                            <select >
-                                <option selected>Please Select Class *</option>
-                                <option>One</option>
-                                <option>Two</option>
-                                <option>Three</option>
-                                <option>Four</option>
-                                <option>Five</option>
-                            </select>
-                        </div>
-                        <div class="col-md-3 mt-3 mt-md-0">
-                            <label class="text-capitalize">Section *</label><br>
-                            <select >
-                                <option selected>Please Select Section *</option>
-                                <option>Pink</option>
-                                <option>Red</option>
-                                <option>Blue</option>
-                                <option>Rose</option>
-                                <option>Bird</option>
-                            </select>
-                        </div>
-                        <div class="col-md-3 mt-3 mt-md-0">
-                            <label class="text-capitalize">Admission id *</label><br>
-                            <input type="text">
-                        </div>
-                        <div class="col-md-3 mt-3 mt-md-0">
-                            <label class="text-capitalize">phone *</label><br>
-                            <input type="text">
-                        </div>
-                     </div>
-                     <div class="row form-desing my-4">
-                        <div class="col-md-6 mt-2 mt-md-0">
-                            <label>Short Bio</label><br>
-                            <textarea cols="30" rows="10"></textarea>
-                        </div>
-                        <div class="col-md-6 mt-3 mt-md-0">
-                            <label>Upload Student Photo (150px X 150px)</label><br>
-                            <input type="file">
-                        </div>
-                     </div>
-                     <div class="row form-desing my-4">
-                       <div class="col">
-                        <button class="btn save text-white py-2 px-5" type="button">Save</button>
-                        <button class="btn reset text-white py-2 px-5" type="reset">Reset</button>
-                       </div>
-                     </div>
+            <nav class="navbar navbar-expand px-3 border-bottom">
+                <button class="btn btn-dark" id="sidebar-toggle" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>                
+                <div class="navbar-collapse navbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown d-flex align-items-center">
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                <img src="static/img/user.png" class="avatar img-fluid rounded" alt="">
+                            </a>
+                            <div class="d-flex flex-column">
+                                <span class="fw-bold" style="font-size: 16px;">Raul Guilherme</span>
+                                <span class="text-muted" style="font-size: 12px;">Admin</span>
+                            </div>                            
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0 ms-2">
+                                <i class="bi bi-caret-down-fill"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a href="{{ url_for('logout') }}" class="dropdown-item" id="logout-link">Sair</a>
+                            </div>                            
+                        </li>
+                    </ul>
+                </div>                       
+            </nav>            
+            
+            
+            <!-- Conteúdo das Abas -->
+            <div class="container-fluid">
+                <div class="tab-content">
                     
-                  </div>
-                 </div>
-                 
-                </div>
-             </div>
-           </div>
-             
+                    
+                    
+                    <!-- INICIO -->
+                    <div id="todosdados" class="tab-pane fade show active">
+                        <a> </a>
+        </div>
+                    
+
+                    <!-- EMEB CHIOZO -->
+
+                    <!--EMEB CHIOZO ALUNOS-->    
+                    <div id="ChiozoAlunos" class="tab-pane fade">
+                        <h3>
+                            EMEB CHIOZO
+                        </h3>                   
+                    </div>
+ 
+                    <!-- EMEB CHIOZO OCORRÊNCIAS -->    
+                    <div id="ChiozoOcorrencias" class="tab-pane fade">
+                        <h3>
+                            EMEB CHIOZO
+                        </h3>
+                    </div>
+
+
+                    <!-- EMEB ITALO ADAMI -->
+
+                    <!--EMEB ITALO ADAMI ALUNOS-->    
+                    <div id="ItaloAdamiAlunos" class="tab-pane fade">
+                        <h3>
+                            EMEB ITALO ADAMI
+                        </h3>                   
+                    </div>
+ 
+                    <!-- EMEB ITALO ADAMI OCORRÊNCIAS -->    
+                    <div id="ItaloAdamiOcorrencias" class="tab-pane fade">
+                        <h3>
+                            EMEB ITALO ADAMI
+                        </h3>
+                    </div>
+
+
+
+                    <!-- EMEB JOAQUIM PERPÉTUO -->
+
+                    <!--EMEB JOAQUIM PERPÉTUO ALUNOS-->    
+                    <div id="JoaquimPerpetuoAlunos" class="tab-pane fade">
+                        <h3>
+                            EMEB JOAQUIM PERPÉTUO
+                        </h3>                   
+                    </div>
+ 
+                    <!-- EMEB JOAQUIM PERPÉTUO OCORRÊNCIAS -->    
+                    <div id="JoaquimPerpetuoOcorrencias" class="tab-pane fade">
+                        <h3>
+                            EMEB JOAQUIM PERPÉTUO
+                        </h3>
+                    </div>
+
+
+
+                    <!-- EMEB MICHEL ALVES -->
+
+                    <!--EMEB MICHEL ALVES ALUNOS-->    
+                    <div id="MichelAlvesAlunos" class="tab-pane fade">
+                        <h3>
+                            EMEB MICHEL ALVES
+                        </h3>                   
+                    </div>
+ 
+                    <!-- EMEB MICHEL ALVES OCORRÊNCIAS -->    
+                    <div id="MichelAlvesOcorrencias" class="tab-pane fade">
+                        <h3>
+                            EMEB MICHEL ALVES
+                        </h3>
+                    </div>
+            </div>   
+</div>
+        </div>
     </div>
-    </div>
-             <!-- ============================== script ============================== -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        document.querySelectorAll('.tab-link').forEach(link => {
+    link.addEventListener('click', function () {
+        let tabId = this.getAttribute('data-tab');
+
+        document.querySelectorAll('.tab-pane').forEach(tab => {
+            tab.classList.remove('show', 'active');
+        });
+
+        document.getElementById(tabId).classList.add('show', 'active');
+    });
+});
+
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="static/js/script.js"></script>
 </body>
 </html>
