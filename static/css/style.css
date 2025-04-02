@@ -205,35 +205,4 @@ html[data-bs-theme="light"] .theme-toggle .fa-sun {
     display: none;
 }
 
-.yellow-text {
-    color: #ffc107 !important;
-}
 
-.table-responsive {
-    width: 100%;
-    overflow-x: auto;
-    display: block;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    white-space: nowrap;
-    background: #ffffff;
-}
-
-th, td {
-    border: 1px solid #ccc;
-    width: auto;
-    height: 30px;
-    text-align: center;
-    min-width: 50px;
-}
-
-th {
-    background-color: #f1f3f5;
-}
-
-td[contenteditable="true"] {
-    background-color: #e9ecef;
-}
