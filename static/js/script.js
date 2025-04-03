@@ -29,3 +29,8 @@ function isLight(){
 if(isLight()){
     toggleRootClass();
 }
+
+function removerLinha(botao) {
+    let linha = botao.closest("tr");
+    linha.remove();
+}

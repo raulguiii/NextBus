@@ -152,7 +152,6 @@
                     
 
                     <!-- EMEB CHIOZO -->
-
                     <!-- EMEB CHIOZO ALUNOS-->    
                     <div id="ChiozoAlunos" class="tab-pane fade">
                         <h3>🎉 Seja bem-vindo à Central de ônibus da EMEB Chiozo! 🏫🚌</h3>
@@ -161,7 +160,7 @@
                             Nesta central, você poderá visualizar todos os ônibus relacionados à <strong>EMEB Chiozo</strong> e acompanhar a lista de alunos transportados. 
                             Atualmente, esta página apresenta <strong>quatro ônibus escolares</strong>, cada um com seus respectivos alunos.
                         </p>
-
+                    
                         <p><strong>🚍 Ônibus cadastrados:</strong></p>
                         <ul>
                             <li>🟡 <strong>FQJ-1215</strong></li>
@@ -169,16 +168,17 @@
                             <li>🟢 <strong>VCA-0183</strong></li>
                             <li>🔴 <strong>CVB-8642</strong></li>
                         </ul>
-
+                    
+                        
                         <p>
                             Além da visualização, aqui você também pode <strong>adicionar, remover e mover alunos</strong> entre os ônibus, garantindo um melhor gerenciamento do transporte escolar.
                         </p>
-
+                    
                         <p><strong>🚀 Facilidade e controle na palma da sua mão!</strong></p>
-
+                    
                         <!-- Imagem como botão de colapso -->
                         <img src="#" 
-                            alt=" Foto do Ônibus Escolar junto com a placa"
+                            alt="Foto do Ônibus Escolar junto com a placa"
                             class="img-fluid w-100"
                             style="cursor: pointer; max-height: 200px; object-fit: cover; "
                             onclick="toggleCollapseChiozo()">
@@ -195,6 +195,7 @@
                                         <th>Idade</th>
                                         <th>Série</th>
                                         <th>Período</th>
+                                        <th>Ação</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -206,6 +207,11 @@
                                         <td>10 anos</td>
                                         <td>5ª Série</td>
                                         <td>Matutino</td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm border-0 p-0" onclick="removerLinha(this)">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Maria Oliveira</td>
@@ -215,6 +221,11 @@
                                         <td>11 anos</td>
                                         <td>6ª Série</td>
                                         <td>Vespertino</td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm border-0 p-0" onclick="removerLinha(this)">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Carlos Souza</td>
@@ -224,12 +235,17 @@
                                         <td>12 anos</td>
                                         <td>7ª Série</td>
                                         <td>Noturno</td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm border-0 p-0" onclick="removerLinha(this)">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>    
                     </div>
-
+                    
                     <script>
                         function toggleCollapseChiozo() {
                             let table = document.getElementById("ChiozoTable");
@@ -386,6 +402,7 @@
                                         <th>Idade</th>
                                         <th>Série</th>
                                         <th>Período</th>
+                                        <th>Ação</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -397,6 +414,11 @@
                                         <td>10 anos</td>
                                         <td>5ª Série</td>
                                         <td>Matutino</td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm border-0 p-0" onclick="removerLinha(this)">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Maria Oliveira</td>
@@ -406,6 +428,11 @@
                                         <td>11 anos</td>
                                         <td>6ª Série</td>
                                         <td>Vespertino</td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm border-0 p-0" onclick="removerLinha(this)">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Carlos Souza</td>
@@ -415,6 +442,11 @@
                                         <td>12 anos</td>
                                         <td>7ª Série</td>
                                         <td>Noturno</td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm border-0 p-0" onclick="removerLinha(this)">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -483,6 +515,7 @@
                                         <th>Idade</th>
                                         <th>Série</th>
                                         <th>Período</th>
+                                        <th>Ação</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -494,6 +527,11 @@
                                         <td>10 anos</td>
                                         <td>5ª Série</td>
                                         <td>Matutino</td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm border-0 p-0" onclick="removerLinha(this)">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </td>                                  
                                     </tr>
                                     <tr>
                                         <td>Maria Oliveira</td>
@@ -503,6 +541,11 @@
                                         <td>11 anos</td>
                                         <td>6ª Série</td>
                                         <td>Vespertino</td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm border-0 p-0" onclick="removerLinha(this)">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Carlos Souza</td>
@@ -512,6 +555,11 @@
                                         <td>12 anos</td>
                                         <td>7ª Série</td>
                                         <td>Noturno</td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm border-0 p-0" onclick="removerLinha(this)">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -579,6 +627,7 @@
                                         <th>Idade</th>
                                         <th>Série</th>
                                         <th>Período</th>
+                                        <th>Ação</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -590,6 +639,11 @@
                                         <td>10 anos</td>
                                         <td>5ª Série</td>
                                         <td>Matutino</td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm border-0 p-0" onclick="removerLinha(this)">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Maria Oliveira</td>
@@ -599,6 +653,11 @@
                                         <td>11 anos</td>
                                         <td>6ª Série</td>
                                         <td>Vespertino</td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm border-0 p-0" onclick="removerLinha(this)">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Carlos Souza</td>
@@ -608,6 +667,11 @@
                                         <td>12 anos</td>
                                         <td>7ª Série</td>
                                         <td>Noturno</td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm border-0 p-0" onclick="removerLinha(this)">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
