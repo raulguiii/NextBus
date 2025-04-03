@@ -154,7 +154,7 @@
 
                     <!-- EMEB CHIOZO ALUNOS-->    
                     <div id="ChiozoAlunos" class="tab-pane fade">
-                        <h3>🎉 Seja bem-vindo à Central da EMEB Chiozo! 🏫🚌</h3>
+                        <h3>🎉 Seja bem-vindo à Central de ônibus da EMEB Chiozo! 🏫🚌</h3>
                         
                         <p>
                             Nesta central, você poderá visualizar todos os ônibus relacionados à <strong>EMEB Chiozo</strong> e acompanhar a lista de alunos transportados. 
@@ -238,19 +238,113 @@
 
 
  
+                     
                     <!-- EMEB CHIOZO OCORRÊNCIAS -->    
                     <div id="ChiozoOcorrencias" class="tab-pane fade">
-                        <h3>
-                            EMEB CHIOZO
-                        </h3>
+                        <h3>📌 Ocorrências - EMEB Chiozo</h3>
+                        <p>
+                            Bem-vindo à <strong>Central de Ocorrências</strong> da <strong>EMEB Chiozo</strong>! 🎓🚶<br>
+                            Aqui, você pode registrar e consultar ocorrências relacionadas ao transporte escolar. 
+                            Situações comuns incluem:
+                        </p>
+                        <ul style="text-align: left; display: inline-block;">
+                            <li>🚌 Ônibus quebrado</li>
+                            <li>⏳ Atraso excessivo</li>
+                            <li>⚠️ Ônibus não compareceu</li>
+                            <li>💡 Outros imprevistos</li>
+                        </ul>
+                        <p>
+                            ⚠️ <strong>Atenção!</strong> Ao criar uma ocorrência, informe a <strong>data e o horário</strong> 
+                            do ocorrido (não do momento do relato). 
+                            Seja detalhado para que possamos resolver rapidamente! 
+                        </p>
+
+                        <!-- Botão para adicionar nova ocorrência -->
+                        <button class="btn btn-warning mb-3" onclick="exibirAlertOcorrencia()">
+                            <i class="fa-solid fa-plus"></i> Nova Ocorrência
+                        </button>
+
+                        <!-- Tabela de Ocorrências -->
+                        <table class="table table-bordered">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Horário</th>
+                                    <th>Detalhes</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabelaOcorrencias">
+                                <tr>
+                                    <td>02/04/2025</td>
+                                    <td>07:30</td>
+                                    <td>Aluno atrasado no ponto.</td>
+                                </tr>
+                                <tr>
+                                    <td>03/04/2025</td>
+                                    <td>12:15</td>
+                                    <td>Ônibus precisou de manutenção no trajeto.</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+
+                    <!-- Alerta Personalizado -->
+                    <div id="alertOcorrencia" class="custom-alert">
+                        <div class="alert-content">
+                            <h4>Registrar Nova Ocorrência</h4>
+                            <form id="formOcorrencia">
+                                <label>Data:</label>
+                                <input type="date" id="inputData" class="form-control" required>
+
+                                <label>Horário:</label>
+                                <input type="time" id="inputHorario" class="form-control" required>
+
+                                <label>Detalhes:</label>
+                                <textarea id="inputDetalhes" class="form-control" rows="3" required></textarea>
+
+                                <div class="d-flex justify-content-between mt-3">
+                                    <button type="button" class="btn btn-secondary" onclick="fecharAlertOcorrencia()">Cancelar</button>
+                                    <button type="submit" class="btn btn-warning">Salvar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <script>
+                        function exibirAlertOcorrencia() {
+                            document.getElementById('alertOcorrencia').style.display = 'block';
+                        }
+
+                        function fecharAlertOcorrencia() {
+                            document.getElementById('alertOcorrencia').style.display = 'none';
+                        }
+
+                        document.getElementById("formOcorrencia").addEventListener("submit", function(event) {
+                            event.preventDefault();
+
+                            let data = document.getElementById("inputData").value;
+                            let horario = document.getElementById("inputHorario").value;
+                            let detalhes = document.getElementById("inputDetalhes").value;
+
+                            if (data && horario && detalhes) {
+                                let tabela = document.getElementById("tabelaOcorrencias");
+                                let novaLinha = tabela.insertRow();
+
+                                novaLinha.innerHTML = `<td>${data}</td><td>${horario}</td><td>${detalhes}</td>`;
+
+                                fecharAlertOcorrencia();
+                                document.getElementById("formOcorrencia").reset();
+                            }
+                        });
+                    </script>
+
 
 
                     <!-- EMEB ITALO ADAMI -->
 
                     <!--EMEB ITALO ADAMI ALUNOS-->    
                     <div id="ItaloAdamiAlunos" class="tab-pane fade">
-                        <h3>🎉 Seja bem-vindo à Central da EMEB Italo Adami! 🏫🚌</h3>
+                        <h3>🎉 Seja bem-vindo à Central de ônibus da EMEB Italo Adami! 🏫🚌</h3>
                         
                         <p>
                             Nesta central, você poderá visualizar todos os ônibus relacionados à <strong>EMEB Chiozo</strong> e acompanhar a lista de alunos transportados. 
@@ -347,7 +441,7 @@
 
                     <!--EMEB JOAQUIM PERPÉTUO ALUNOS-->    
                     <div id="JoaquimPerpetuoAlunos" class="tab-pane fade">
-                        <h3>🎉 Seja bem-vindo à Central da EMEB Joaquim Perpétuo! 🏫🚌</h3>
+                        <h3>🎉 Seja bem-vindo à Central de ônibus da EMEB Joaquim Perpétuo! 🏫🚌</h3>
                         
                         <p>
                             Nesta central, você poderá visualizar todos os ônibus relacionados à <strong>EMEB Joaquim Perpétuo</strong> e acompanhar a lista de alunos transportados. 
@@ -443,7 +537,7 @@
 
                     <!--EMEB MICHEL ALVES ALUNOS-->    
                     <div id="MichelAlvesAlunos" class="tab-pane fade">
-                        <h3>🎉 Seja bem-vindo à Central da EMEB Michel Alves! 🏫🚌</h3>
+                        <h3>🎉 Seja bem-vindo à Central de ônibus da EMEB Michel Alves! 🏫🚌</h3>
                         
                         <p>
                             Nesta central, você poderá visualizar todos os ônibus relacionados à <strong>EMEB Michel Alves</strong> e acompanhar a lista de alunos transportados. 
