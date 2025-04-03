@@ -34,7 +34,6 @@ function removerLinha(botao) {
     let linha = botao.closest("tr");
     linha.remove();
 }
-
 function confirmarRemocao(nome, botao) {
     if (confirm(`Tem certeza que deseja apagar ${nome} dessa lista?`)) {
         removerLinha(botao);

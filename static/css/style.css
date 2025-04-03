@@ -221,3 +221,7 @@ html[data-bs-theme="light"] .theme-toggle .fa-sun {
     display: flex;
     flex-direction: column;
 }
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}

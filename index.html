@@ -185,6 +185,7 @@
                         
                         <!-- Tabela dentro do colapso -->
                         <div id="ChiozoTable" class="collapse">
+                            <div class="table-responsive">
                             <table class="table table-bordered mt-3">
                                 <thead class="table-dark">
                                     <tr>
@@ -245,6 +246,7 @@
                             </table>
                         </div>    
                     </div>
+                </div>
                     
                     <script>
                         function toggleCollapseChiozo() {
@@ -282,6 +284,7 @@
                         </button>
 
                         <!-- Tabela de Ocorrências -->
+                        <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead class="table-dark">
                                 <tr>
@@ -304,12 +307,12 @@
                             </tbody>
                         </table>
                     </div>
-
+                </div>
                     <!-- Alerta Personalizado -->
                     <div id="alertOcorrencia" class="custom-alert">
                         <div class="alert-content">
                             <h4>Registrar Nova Ocorrência</h4>
-                            <form id="formOcorrencia">
+                            <form id="formOcorrenciaChiozo">
                                 <label>Data:</label>
                                 <input type="date" id="inputData" class="form-control" required>
 
@@ -335,23 +338,25 @@
                         function fecharAlertOcorrencia() {
                             document.getElementById('alertOcorrencia').style.display = 'none';
                         }
+                        document.getElementById("formOcorrenciaChiozo").addEventListener("submit", function(event) {
+                        event.preventDefault();
 
-                        document.getElementById("formOcorrencia").addEventListener("submit", function(event) {
-                            event.preventDefault();
+                        let data = document.getElementById("inputData").value;
+                        let horario = document.getElementById("inputHorario").value;
+                        let detalhes = document.getElementById("inputDetalhes").value;
 
-                            let data = document.getElementById("inputData").value;
-                            let horario = document.getElementById("inputHorario").value;
-                            let detalhes = document.getElementById("inputDetalhes").value;
+                        if (data && horario && detalhes) {
+                            // Convertendo a data para o formato BR (DD/MM/YYYY)
+                            let dataBR = data.split("-").reverse().join("/");
 
-                            if (data && horario && detalhes) {
-                                let tabela = document.getElementById("tabelaOcorrencias");
-                                let novaLinha = tabela.insertRow();
+                            let tabela = document.getElementById("tabelaOcorrencias");
+                            let novaLinha = tabela.insertRow();
 
-                                novaLinha.innerHTML = `<td>${data}</td><td>${horario}</td><td>${detalhes}</td>`;
+                            novaLinha.innerHTML = `<td>${dataBR}</td><td>${horario}</td><td>${detalhes}</td>`;
 
-                                fecharAlertOcorrencia();
-                                document.getElementById("formOcorrencia").reset();
-                            }
+                            fecharAlertOcorrencia();
+                            document.getElementById("formOcorrenciaChiozo").reset();
+                        }
                         });
                     </script>
 
@@ -392,6 +397,7 @@
                         
                         <!-- Tabela dentro do colapso -->
                         <div id="ItaloTable" class="collapse">
+                            <div class="table-responsive">
                             <table class="table table-bordered mt-3">
                                 <thead class="table-dark">
                                     <tr>
@@ -452,7 +458,7 @@
                             </table>
                         </div>    
                     </div>
-
+                </div>
                     <script>
                         function toggleCollapseItalo() {
                             let table = document.getElementById("ItaloTable");
@@ -505,6 +511,7 @@
                         
                         <!-- Tabela dentro do colapso -->
                         <div id="JoaquimTable" class="collapse">
+                            <div class="table-responsive">
                             <table class="table table-bordered mt-3">
                                 <thead class="table-dark">
                                     <tr>
@@ -565,6 +572,7 @@
                             </table>
                         </div>    
                     </div>
+                </div>
 
                     <script>
                         function toggleCollapseJoaquim() {
@@ -617,6 +625,7 @@
                         
                         <!-- Tabela dentro do colapso -->
                         <div id="MichelTable" class="collapse">
+                            <div class="table-responsive">
                             <table class="table table-bordered mt-3">
                                 <thead class="table-dark">
                                     <tr>
@@ -677,6 +686,7 @@
                             </table>
                         </div>    
                     </div>
+                </div>
 
                     <script>
                         function toggleCollapseMichel() {
