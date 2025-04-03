@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextBus</title>
+    <title>NextBus - SEMECTI</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="static/css/style.css">
@@ -85,49 +85,15 @@
                         </ul>
                     </li>
                 </ul>
-
-
-
-                <ul class="sidebar-nav">
-                    <li class="sidebar-header">CRECHES</li>
-                
-                    <!--Creches-->
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed" data-bs-target="#MamaDora" data-bs-toggle="collapse">
-                            <i class="fa-solid fa-file-lines pe-2"></i> <strong>CRECHE MAMA DORA</strong>
-                        </a>
-                        <ul id="MamaDora" class="sidebar-dropdown list-unstyled collapse">
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link tab-link" data-tab="MamaDoraAlunos">ㅤㅤㅤ- Alunos </a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link tab-link" data-tab="MamaDoraOcorrencias">ㅤㅤㅤ- Ocorrências </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed" data-bs-target="#Rosalina" data-bs-toggle="collapse">
-                            <i class="fa-solid fa-file-lines pe-2"></i> <strong>CRECHE ROSALINA</strong>
-                        </a>
-                        <ul id="Rosalina" class="sidebar-dropdown list-unstyled collapse">
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link tab-link" data-tab="RosalinaAlunos">ㅤㅤㅤ- Alunos </a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link tab-link" data-tab="RosalinaOcorrencias">ㅤㅤㅤ- Ocorrências </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
                 
                 
                 <ul class="sidebar-nav">
-                    <li class="sidebar-header">E.M.A</li>
+                    <li class="sidebar-header">E.M</li>
                 
                     <!--E.M.A-->
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed" data-bs-target="#BeneditoVieira" data-bs-toggle="collapse">
-                            <i class="fa-solid fa-file-lines pe-2"></i> <strong>E.M.A Benedito Vieira</strong>
+                            <i class="fa-solid fa-file-lines pe-2"></i> <strong>E.M Benedito Vieira</strong>
                         </a>
                         <ul id="BeneditoVieira" class="sidebar-dropdown list-unstyled collapse">
                             <li class="sidebar-item">
@@ -186,12 +152,91 @@
 
                     <!-- EMEB CHIOZO -->
 
-                    <!--EMEB CHIOZO ALUNOS-->    
+                    <!-- EMEB CHIOZO ALUNOS-->    
                     <div id="ChiozoAlunos" class="tab-pane fade">
-                        <h3>
-                            EMEB CHIOZO
-                        </h3>                   
+                        <h3>🎉 Seja bem-vindo à Central da EMEB Chiozo! 🏫🚌</h3>
+                        
+                        <p>
+                            Nesta central, você poderá visualizar todos os ônibus relacionados à <strong>EMEB Chiozo</strong> e acompanhar a lista de alunos transportados. 
+                            Atualmente, esta página apresenta <strong>quatro ônibus escolares</strong>, cada um com seus respectivos alunos.
+                        </p>
+
+                        <p><strong>🚍 Ônibus cadastrados:</strong></p>
+                        <ul>
+                            <li>🟡 <strong>FQJ-1215</strong></li>
+                            <li>🔵 <strong>VAW-1243</strong></li>
+                            <li>🟢 <strong>VCA-0183</strong></li>
+                            <li>🔴 <strong>CVB-8642</strong></li>
+                        </ul>
+
+                        <p>
+                            Além da visualização, aqui você também pode <strong>adicionar, remover e mover alunos</strong> entre os ônibus, garantindo um melhor gerenciamento do transporte escolar.
+                        </p>
+
+                        <p><strong>🚀 Facilidade e controle na palma da sua mão!</strong></p>
+
+                        <!-- Imagem como botão de colapso -->
+                        <img src="#" 
+                            alt=" Foto do Ônibus Escolar junto com a placa"
+                            class="img-fluid w-100"
+                            style="cursor: pointer; max-height: 200px; object-fit: cover; "
+                            onclick="toggleCollapseChiozo()">
+                        
+                        <!-- Tabela dentro do colapso -->
+                        <div id="ChiozoTable" class="collapse">
+                            <table class="table table-bordered mt-3">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Responsável</th>
+                                        <th>Telefone</th>
+                                        <th>Endereço</th>
+                                        <th>Idade</th>
+                                        <th>Série</th>
+                                        <th>Período</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>João Silva</td>
+                                        <td>Nelci Fernandes</td>
+                                        <td>(11) 98765-4321</td>
+                                        <td>Rua das Flores, 123</td>
+                                        <td>10 anos</td>
+                                        <td>5ª Série</td>
+                                        <td>Matutino</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maria Oliveira</td>
+                                        <td>Paulo Oliveira</td>
+                                        <td>(21) 99876-5432</td>
+                                        <td>Avenida Central, 456</td>
+                                        <td>11 anos</td>
+                                        <td>6ª Série</td>
+                                        <td>Vespertino</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Carlos Souza</td>
+                                        <td>Renata Souza</td>
+                                        <td>(31) 91234-5678</td>
+                                        <td>Travessa Azul, 789</td>
+                                        <td>12 anos</td>
+                                        <td>7ª Série</td>
+                                        <td>Noturno</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>    
                     </div>
+
+                    <script>
+                        function toggleCollapseChiozo() {
+                            let table = document.getElementById("ChiozoTable");
+                            table.classList.toggle("show");
+                        }
+                    </script>
+
+
  
                     <!-- EMEB CHIOZO OCORRÊNCIAS -->    
                     <div id="ChiozoOcorrencias" class="tab-pane fade">
@@ -205,10 +250,89 @@
 
                     <!--EMEB ITALO ADAMI ALUNOS-->    
                     <div id="ItaloAdamiAlunos" class="tab-pane fade">
-                        <h3>
-                            EMEB ITALO ADAMI
-                        </h3>                   
+                        <h3>🎉 Seja bem-vindo à Central da EMEB Italo Adami! 🏫🚌</h3>
+                        
+                        <p>
+                            Nesta central, você poderá visualizar todos os ônibus relacionados à <strong>EMEB Chiozo</strong> e acompanhar a lista de alunos transportados. 
+                            Atualmente, esta página apresenta <strong>quatro ônibus escolares</strong>, cada um com seus respectivos alunos.
+                        </p>
+
+                        <p><strong>🚍 Ônibus cadastrados:</strong></p>
+                        <ul>
+                            <li>🟡 <strong>FQJ-1215</strong></li>
+                            <li>🔵 <strong>VAW-1243</strong></li>
+                            <li>🟢 <strong>VCA-0183</strong></li>
+                            <li>🔴 <strong>CVB-8642</strong></li>
+                        </ul>
+
+                        <p>
+                            Além da visualização, aqui você também pode <strong>adicionar, remover e mover alunos</strong> entre os ônibus, garantindo um melhor gerenciamento do transporte escolar.
+                        </p>
+
+                        <p><strong>🚀 Facilidade e controle na palma da sua mão!</strong></p>  
+                        
+                        
+                        <!-- Imagem como botão de colapso -->
+                        <img src="#" 
+                            alt=" Foto do Ônibus Escolar junto com a placa"
+                            class="img-fluid w-100"
+                            style="cursor: pointer; max-height: 200px; object-fit: cover; "
+                            onclick="toggleCollapseItalo()">
+                        
+                        <!-- Tabela dentro do colapso -->
+                        <div id="ItaloTable" class="collapse">
+                            <table class="table table-bordered mt-3">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Responsável</th>
+                                        <th>Telefone</th>
+                                        <th>Endereço</th>
+                                        <th>Idade</th>
+                                        <th>Série</th>
+                                        <th>Período</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>João Silva</td>
+                                        <td>Nelci Fernandes</td>
+                                        <td>(11) 98765-4321</td>
+                                        <td>Rua das Flores, 123</td>
+                                        <td>10 anos</td>
+                                        <td>5ª Série</td>
+                                        <td>Matutino</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maria Oliveira</td>
+                                        <td>Paulo Oliveira</td>
+                                        <td>(21) 99876-5432</td>
+                                        <td>Avenida Central, 456</td>
+                                        <td>11 anos</td>
+                                        <td>6ª Série</td>
+                                        <td>Vespertino</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Carlos Souza</td>
+                                        <td>Renata Souza</td>
+                                        <td>(31) 91234-5678</td>
+                                        <td>Travessa Azul, 789</td>
+                                        <td>12 anos</td>
+                                        <td>7ª Série</td>
+                                        <td>Noturno</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>    
                     </div>
+
+                    <script>
+                        function toggleCollapseItalo() {
+                            let table = document.getElementById("ItaloTable");
+                            table.classList.toggle("show");
+                        }
+                    </script>
+                
  
                     <!-- EMEB ITALO ADAMI OCORRÊNCIAS -->    
                     <div id="ItaloAdamiOcorrencias" class="tab-pane fade">
@@ -223,10 +347,88 @@
 
                     <!--EMEB JOAQUIM PERPÉTUO ALUNOS-->    
                     <div id="JoaquimPerpetuoAlunos" class="tab-pane fade">
-                        <h3>
-                            EMEB JOAQUIM PERPÉTUO
-                        </h3>                   
+                        <h3>🎉 Seja bem-vindo à Central da EMEB Joaquim Perpétuo! 🏫🚌</h3>
+                        
+                        <p>
+                            Nesta central, você poderá visualizar todos os ônibus relacionados à <strong>EMEB Joaquim Perpétuo</strong> e acompanhar a lista de alunos transportados. 
+                            Atualmente, esta página apresenta <strong>quatro ônibus escolares</strong>, cada um com seus respectivos alunos.
+                        </p>
+
+                        <p><strong>🚍 Ônibus cadastrados:</strong></p>
+                        <ul>
+                            <li>🟡 <strong>FQJ-1215</strong></li>
+                            <li>🔵 <strong>VAW-1243</strong></li>
+                            <li>🟢 <strong>VCA-0183</strong></li>
+                            <li>🔴 <strong>CVB-8642</strong></li>
+                        </ul>
+
+                        <p>
+                            Além da visualização, aqui você também pode <strong>adicionar, remover e mover alunos</strong> entre os ônibus, garantindo um melhor gerenciamento do transporte escolar.
+                        </p>
+
+                        <p><strong>🚀 Facilidade e controle na palma da sua mão!</strong></p>  
+                        
+                        
+                        <!-- Imagem como botão de colapso -->
+                        <img src="#" 
+                            alt=" Foto do Ônibus Escolar junto com a placa"
+                            class="img-fluid w-100"
+                            style="cursor: pointer; max-height: 200px; object-fit: cover; "
+                            onclick="toggleCollapseJoaquim()">
+                        
+                        <!-- Tabela dentro do colapso -->
+                        <div id="JoaquimTable" class="collapse">
+                            <table class="table table-bordered mt-3">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Responsável</th>
+                                        <th>Telefone</th>
+                                        <th>Endereço</th>
+                                        <th>Idade</th>
+                                        <th>Série</th>
+                                        <th>Período</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>João Silva</td>
+                                        <td>Nelci Fernandes</td>
+                                        <td>(11) 98765-4321</td>
+                                        <td>Rua das Flores, 123</td>
+                                        <td>10 anos</td>
+                                        <td>5ª Série</td>
+                                        <td>Matutino</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maria Oliveira</td>
+                                        <td>Paulo Oliveira</td>
+                                        <td>(21) 99876-5432</td>
+                                        <td>Avenida Central, 456</td>
+                                        <td>11 anos</td>
+                                        <td>6ª Série</td>
+                                        <td>Vespertino</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Carlos Souza</td>
+                                        <td>Renata Souza</td>
+                                        <td>(31) 91234-5678</td>
+                                        <td>Travessa Azul, 789</td>
+                                        <td>12 anos</td>
+                                        <td>7ª Série</td>
+                                        <td>Noturno</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>    
                     </div>
+
+                    <script>
+                        function toggleCollapseJoaquim() {
+                            let table = document.getElementById("JoaquimTable");
+                            table.classList.toggle("show");
+                        }
+                    </script>
  
                     <!-- EMEB JOAQUIM PERPÉTUO OCORRÊNCIAS -->    
                     <div id="JoaquimPerpetuoOcorrencias" class="tab-pane fade">
@@ -241,15 +443,94 @@
 
                     <!--EMEB MICHEL ALVES ALUNOS-->    
                     <div id="MichelAlvesAlunos" class="tab-pane fade">
-                        <h3>
-                            EMEB MICHEL ALVES
-                        </h3>                   
+                        <h3>🎉 Seja bem-vindo à Central da EMEB Michel Alves! 🏫🚌</h3>
+                        
+                        <p>
+                            Nesta central, você poderá visualizar todos os ônibus relacionados à <strong>EMEB Michel Alves</strong> e acompanhar a lista de alunos transportados. 
+                            Atualmente, esta página apresenta <strong>quatro ônibus escolares</strong>, cada um com seus respectivos alunos.
+                        </p>
+
+                        <p><strong>🚍 Ônibus cadastrados:</strong></p>
+                        <ul>
+                            <li>🟡 <strong>FQJ-1215</strong></li>
+                            <li>🔵 <strong>VAW-1243</strong></li>
+                            <li>🟢 <strong>VCA-0183</strong></li>
+                            <li>🔴 <strong>CVB-8642</strong></li>
+                        </ul>
+
+                        <p>
+                            Além da visualização, aqui você também pode <strong>adicionar, remover e mover alunos</strong> entre os ônibus, garantindo um melhor gerenciamento do transporte escolar.
+                        </p>
+
+                        <p><strong>🚀 Facilidade e controle na palma da sua mão!</strong></p>  
+                        
+                        
+                        <!-- Imagem como botão de colapso -->
+                        <img src="#" 
+                            alt=" Foto do Ônibus Escolar junto com a placa"
+                            class="img-fluid w-100"
+                            style="cursor: pointer; max-height: 200px; object-fit: cover; "
+                            onclick="toggleCollapseMichel()">
+                        
+                        <!-- Tabela dentro do colapso -->
+                        <div id="MichelTable" class="collapse">
+                            <table class="table table-bordered mt-3">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Responsável</th>
+                                        <th>Telefone</th>
+                                        <th>Endereço</th>
+                                        <th>Idade</th>
+                                        <th>Série</th>
+                                        <th>Período</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>João Silva</td>
+                                        <td>Nelci Fernandes</td>
+                                        <td>(11) 98765-4321</td>
+                                        <td>Rua das Flores, 123</td>
+                                        <td>10 anos</td>
+                                        <td>5ª Série</td>
+                                        <td>Matutino</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maria Oliveira</td>
+                                        <td>Paulo Oliveira</td>
+                                        <td>(21) 99876-5432</td>
+                                        <td>Avenida Central, 456</td>
+                                        <td>11 anos</td>
+                                        <td>6ª Série</td>
+                                        <td>Vespertino</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Carlos Souza</td>
+                                        <td>Renata Souza</td>
+                                        <td>(31) 91234-5678</td>
+                                        <td>Travessa Azul, 789</td>
+                                        <td>12 anos</td>
+                                        <td>7ª Série</td>
+                                        <td>Noturno</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>    
                     </div>
+
+                    <script>
+                        function toggleCollapseMichel() {
+                            let table = document.getElementById("MichelTable");
+                            table.classList.toggle("show");
+                        }
+                    </script>                  
+                    
  
                     <!-- EMEB MICHEL ALVES OCORRÊNCIAS -->    
                     <div id="MichelAlvesOcorrencias" class="tab-pane fade">
                         <h3>
-                            EMEB MICHEL ALVES
+                            EMEB MICHEL ALVES a
                         </h3>
                     </div>
             </div>   
