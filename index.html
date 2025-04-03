@@ -279,7 +279,7 @@
                         </p>
 
                         <!-- Botão para adicionar nova ocorrência -->
-                        <button class="btn btn-warning mb-3" onclick="exibirAlertOcorrencia()">
+                        <button class="btn btn-warning mb-3" onclick="exibirAlertOcorrenciaChiozo()">
                             <i class="fa-solid fa-plus"></i> Nova Ocorrência
                         </button>
 
@@ -293,7 +293,7 @@
                                     <th>Detalhes</th>
                                 </tr>
                             </thead>
-                            <tbody id="tabelaOcorrencias">
+                            <tbody id="tabelaOcorrenciasChiozo">
                                 <tr>
                                     <td>02/04/2025</td>
                                     <td>07:30</td>
@@ -309,7 +309,7 @@
                     </div>
                 </div>
                     <!-- Alerta Personalizado -->
-                    <div id="alertOcorrencia" class="custom-alert">
+                    <div id="alertOcorrenciaChiozo" class="custom-alert">
                         <div class="alert-content">
                             <h4>Registrar Nova Ocorrência</h4>
                             <form id="formOcorrenciaChiozo">
@@ -323,7 +323,7 @@
                                 <textarea id="inputDetalhes" class="form-control" rows="3" required></textarea>
 
                                 <div class="d-flex justify-content-between mt-3">
-                                    <button type="button" class="btn btn-secondary" onclick="fecharAlertOcorrencia()">Cancelar</button>
+                                    <button type="button" class="btn btn-secondary" onclick="fecharAlertOcorrenciaChiozo()">Cancelar</button>
                                     <button type="submit" class="btn btn-warning">Salvar</button>
                                 </div>
                             </form>
@@ -331,12 +331,12 @@
                     </div>
 
                     <script>
-                        function exibirAlertOcorrencia() {
-                            document.getElementById('alertOcorrencia').style.display = 'block';
+                        function exibirAlertOcorrenciaChiozo() {
+                            document.getElementById('alertOcorrenciaChiozo').style.display = 'block';
                         }
 
-                        function fecharAlertOcorrencia() {
-                            document.getElementById('alertOcorrencia').style.display = 'none';
+                        function fecharAlertOcorrenciaChiozo() {
+                            document.getElementById('alertOcorrenciaChiozo').style.display = 'none';
                         }
                         document.getElementById("formOcorrenciaChiozo").addEventListener("submit", function(event) {
                         event.preventDefault();
@@ -349,12 +349,12 @@
                             // Convertendo a data para o formato BR (DD/MM/YYYY)
                             let dataBR = data.split("-").reverse().join("/");
 
-                            let tabela = document.getElementById("tabelaOcorrencias");
+                            let tabela = document.getElementById("tabelaOcorrenciasChiozo");
                             let novaLinha = tabela.insertRow();
 
                             novaLinha.innerHTML = `<td>${dataBR}</td><td>${horario}</td><td>${detalhes}</td>`;
 
-                            fecharAlertOcorrencia();
+                            fecharAlertOcorrenciaChiozo();
                             document.getElementById("formOcorrenciaChiozo").reset();
                         }
                         });
