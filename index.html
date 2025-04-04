@@ -413,15 +413,17 @@
                                     <th>Horário</th>
                                     <th>Detalhes</th>
                                     <th>Arquivo</th>
+                                    <th style="width: 40px;"><i class="fa-solid fa-spinner"></i></th>
                                     <th style="width: 40px;"><i class="fa-solid fa-comment"></i></th>
                                 </tr>
-                            </thead>
+                            </thead>                            
                             <tbody id="tabelaOcorrenciasChiozo">
                                 <tr>
                                     <td>02/04/2025</td>
                                     <td>07:30</td>
                                     <td>Aluno atrasado no ponto.</td>
                                     <td>Nenhum arquivo</td>
+                                    <td><i class="fa-solid fa-x text-danger" style="cursor: pointer;" onclick="alternarStatus(this)" title="Em andamento"></i></td>
                                     <td><i class="fa-solid fa-comment text-primary" style="cursor: pointer;" onclick="abrirComentarios(this)"></i></td>
                                 </tr>
                                 <tr>
@@ -429,9 +431,10 @@
                                     <td>12:15</td>
                                     <td>Ônibus precisou de manutenção no trajeto.</td>
                                     <td>Nenhum arquivo</td>
+                                    <td><i class="fa-solid fa-x text-danger" style="cursor: pointer;" onclick="alternarStatus(this)" title="Em andamento"></i></td>
                                     <td><i class="fa-solid fa-comment text-primary" style="cursor: pointer;" onclick="abrirComentarios(this)"></i></td>
                                 </tr>
-                            </tbody>                            
+                            </tbody>                                                        
                         </table>
                     </div>
                 </div>
@@ -490,12 +493,31 @@
                             let tabela = document.getElementById("tabelaOcorrenciasChiozo");
                             let novaLinha = tabela.insertRow();
 
-                            novaLinha.innerHTML = `<td>${dataBR}</td><td>${horario}</td><td>${detalhes}</td><td>${arquivoLink}</td>`;
+                            novaLinha.innerHTML = `
+                            <td>${dataBR}</td>
+                            <td>${horario}</td>
+                            <td>${detalhes}</td>
+                            <td>${arquivoLink}</td>
+                            <td><i class="fa-solid fa-x text-danger" style="cursor: pointer;" onclick="alternarStatus(this)" title="Em andamento"></i></td>
+                            <td><i class="fa-solid fa-comment text-primary" style="cursor: pointer;" onclick="abrirComentarios(this)"></i></td>
+                        `;
+
 
                             fecharAlertOcorrenciaChiozo();
                             document.getElementById("formOcorrenciaChiozo").reset();
                         }
                     });
+                    function alternarStatus(icone) {
+                    if (icone.classList.contains("fa-x")) {
+                        icone.classList.remove("fa-x", "text-danger");
+                        icone.classList.add("fa-circle-check", "text-success");
+                        icone.title = "Resolvido";
+                    } else {
+                        icone.classList.remove("fa-circle-check", "text-success");
+                        icone.classList.add("fa-x", "text-danger");
+                        icone.title = "Em andamento";
+                    }
+                }
                     </script>
                     <div id="comentarioModal" class="custom-alert" style="display: none;">
                         <div class="alert-content">
