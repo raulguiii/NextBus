@@ -8,10 +8,6 @@ OCORRENCIAS:
 
 STATUS: vai ser o status da ocorrencia, inicia "em andamento", e quando finalizada ocorrencia vai para "Resolvido", após finalizado é possivel voltar para "em andamento", fazer um filtro para que os "em andamento" aparecam antes dos "Resolvidos". Somente o gestor do contrato pode alterar esse status
 
-COMENTARIOS: deve ser possivel comentar em uma ocorrencia
-
-ARQUIVOS: deve ser possivel colar arquivos na ocorrencia
-
 !!!!!!!!---observações
 
 QUEM CRIA OCORRENCIA É SO A ESCOLA

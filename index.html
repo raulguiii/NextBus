@@ -412,7 +412,8 @@
                                     <th>Data</th>
                                     <th>Horário</th>
                                     <th>Detalhes</th>
-                                    <th>Arquivo</th> <!-- nova coluna -->
+                                    <th>Arquivo</th>
+                                    <th style="width: 40px;"><i class="fa-solid fa-comment"></i></th>
                                 </tr>
                             </thead>
                             <tbody id="tabelaOcorrenciasChiozo">
@@ -421,12 +422,14 @@
                                     <td>07:30</td>
                                     <td>Aluno atrasado no ponto.</td>
                                     <td>Nenhum arquivo</td>
+                                    <td><i class="fa-solid fa-comment text-primary" style="cursor: pointer;" onclick="abrirComentarios(this)"></i></td>
                                 </tr>
                                 <tr>
                                     <td>03/04/2025</td>
                                     <td>12:15</td>
                                     <td>Ônibus precisou de manutenção no trajeto.</td>
                                     <td>Nenhum arquivo</td>
+                                    <td><i class="fa-solid fa-comment text-primary" style="cursor: pointer;" onclick="abrirComentarios(this)"></i></td>
                                 </tr>
                             </tbody>                            
                         </table>
@@ -493,6 +496,55 @@
                             document.getElementById("formOcorrenciaChiozo").reset();
                         }
                     });
+                    </script>
+                    <div id="comentarioModal" class="custom-alert" style="display: none;">
+                        <div class="alert-content">
+                            <h4>Comentários da Ocorrência</h4>
+                            <div id="comentariosConteudo" style="max-height: 200px; overflow-y: auto; background: #f9f9f9; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px;"></div>
+                            
+                            <textarea id="novoComentario" class="form-control" rows="2" placeholder="Digite seu comentário..."></textarea>
+                            
+                            <div class="d-flex justify-content-between mt-3">
+                                <button type="button" class="btn btn-secondary" onclick="fecharComentarios()">Fechar</button>
+                                <button type="button" class="btn btn-warning" onclick="salvarComentario()">Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        let comentariosPorLinha = new Map();
+                        let linhaAtual = null;
+
+                        function abrirComentarios(icone) {
+                            const linha = icone.closest('tr');
+                            linhaAtual = linha;
+
+                            const index = linha.rowIndex - 1; // ajusta para o índice da tabela (ignora o cabeçalho)
+
+                            const comentarios = comentariosPorLinha.get(index) || [];
+                            const container = document.getElementById("comentariosConteudo");
+
+                            container.innerHTML = comentarios.map(c => `<div>🗨️ ${c}</div>`).join("");
+                            document.getElementById("comentarioModal").style.display = "block";
+                        }
+
+                        function fecharComentarios() {
+                            document.getElementById("comentarioModal").style.display = "none";
+                            document.getElementById("novoComentario").value = "";
+                        }
+
+                        function salvarComentario() {
+                            const texto = document.getElementById("novoComentario").value.trim();
+                            if (!texto || !linhaAtual) return;
+
+                            const index = linhaAtual.rowIndex - 1;
+
+                            const comentarios = comentariosPorLinha.get(index) || [];
+                            comentarios.push(texto);
+                            comentariosPorLinha.set(index, comentarios);
+
+                            document.getElementById("novoComentario").value = "";
+                            abrirComentarios(linhaAtual.querySelector("i")); // atualiza exibição
+                        }
                     </script>
 
 
