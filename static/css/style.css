@@ -283,3 +283,10 @@ html[data-bs-theme="light"] .theme-toggle .fa-sun {
     color: rgb(171, 171, 8);
     background-color: #ffffff;
   }
+
+  @media (max-width: 768px) { /* Para telas menores, como celulares */
+    #todosdados .cards {
+      flex-basis: 100%; /* Ocupa 100% da largura */
+    }
+  }
+  
