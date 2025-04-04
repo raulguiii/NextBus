@@ -412,6 +412,7 @@
                                     <th>Data</th>
                                     <th>Horário</th>
                                     <th>Detalhes</th>
+                                    <th>Arquivo</th> <!-- nova coluna -->
                                 </tr>
                             </thead>
                             <tbody id="tabelaOcorrenciasChiozo">
@@ -419,13 +420,15 @@
                                     <td>02/04/2025</td>
                                     <td>07:30</td>
                                     <td>Aluno atrasado no ponto.</td>
+                                    <td>Nenhum arquivo</td>
                                 </tr>
                                 <tr>
                                     <td>03/04/2025</td>
                                     <td>12:15</td>
                                     <td>Ônibus precisou de manutenção no trajeto.</td>
+                                    <td>Nenhum arquivo</td>
                                 </tr>
-                            </tbody>
+                            </tbody>                            
                         </table>
                     </div>
                 </div>
@@ -442,6 +445,10 @@
 
                                 <label>Detalhes:</label>
                                 <textarea id="inputDetalhes" class="form-control" rows="3" required></textarea>
+
+                                <label>Arquivo (opcional):</label>
+                                <input type="file" id="inputArquivo" class="form-control">
+
 
                                 <div class="d-flex justify-content-between mt-3">
                                     <button type="button" class="btn btn-secondary" onclick="fecharAlertOcorrenciaChiozo()">Cancelar</button>
@@ -465,20 +472,27 @@
                         let data = document.getElementById("inputData").value;
                         let horario = document.getElementById("inputHorario").value;
                         let detalhes = document.getElementById("inputDetalhes").value;
+                        let arquivoInput = document.getElementById("inputArquivo");
+
+                        let arquivoLink = "-";
+                        if (arquivoInput.files.length > 0) {
+                            let arquivo = arquivoInput.files[0];
+                            let urlTemporaria = URL.createObjectURL(arquivo);
+                            arquivoLink = `<a href="${urlTemporaria}" target="_blank">${arquivo.name}</a>`;
+                        }
 
                         if (data && horario && detalhes) {
-                            // Convertendo a data para o formato BR (DD/MM/YYYY)
                             let dataBR = data.split("-").reverse().join("/");
 
                             let tabela = document.getElementById("tabelaOcorrenciasChiozo");
                             let novaLinha = tabela.insertRow();
 
-                            novaLinha.innerHTML = `<td>${dataBR}</td><td>${horario}</td><td>${detalhes}</td>`;
+                            novaLinha.innerHTML = `<td>${dataBR}</td><td>${horario}</td><td>${detalhes}</td><td>${arquivoLink}</td>`;
 
                             fecharAlertOcorrenciaChiozo();
                             document.getElementById("formOcorrenciaChiozo").reset();
                         }
-                        });
+                    });
                     </script>
 
 
