@@ -163,8 +163,8 @@
                                 <i class="bi bi-caret-down-fill"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a href="{{ url_for('logout') }}" class="dropdown-item" id="logout-link">Sair</a>
-                            </div>                            
+                                <a href="#" class="dropdown-item" id="logout-link">Sair</a>
+                            </div>                           
                         </li>
                     </ul>
                 </div>                       
@@ -192,6 +192,10 @@
                         });
                     });
                 });
+                document.getElementById("logout-link").addEventListener("click", function(event) {
+                event.preventDefault(); // Evita o comportamento padrão do link
+                window.location.href = "login.html"; // Redireciona para a página de login
+            });
             </script>
 
 
