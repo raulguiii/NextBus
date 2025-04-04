@@ -225,3 +225,61 @@ html[data-bs-theme="light"] .theme-toggle .fa-sun {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
+#todosdados .box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  
+  #todosdados .cards {
+    flex-basis: 45.3%; 
+    margin: 0.5%;
+    padding: 30px 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #fff;
+    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  #todosdados .cards:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+  }
+  
+  #todosdados .cards .icon {
+    height: 80px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  
+  #todosdados .cards i {
+    font-size: 40px;
+    border-radius: 50%;
+  }
+  
+  #todosdados .cards h5 {
+    color: var(--color);
+  }
+  
+  #todosdados .alunosTransportados {
+    color: green;
+    background-color: #ffffff;
+  }
+  #todosdados .escolasEnvolvidas {
+    color: blue;
+    background-color: #ffffff;
+  } 
+  #todosdados .ocorrencias {
+    color: red;
+    background-color: #ffffff;
+  }
+  #todosdados .onibus {
+    color: rgb(171, 171, 8);
+    background-color: #ffffff;
+  }
