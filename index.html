@@ -528,10 +528,112 @@
 
                     <!-- EMEB CHIOZO FREQUÊNCIA -->    
                     <div id="ChiozoFrequencia" class="tab-pane fade">
-                        <h3>
-                            EMEB CHIOZO
-                        </h3>
+                        <h3>📌 Frequência - EMEB Chiozo</h3>
+                    <p>
+                        Bem-vindo ao <strong>Registro de Frequência</strong> da <strong>EMEB Chiozo</strong>! 📝🚌<br>
+                        Nesta área, você pode <strong>enviar os registros de frequência</strong> do transporte escolar com os dados principais do trajeto.
+                        Os envios devem conter:
+                    </p>
+                    <ul style="text-align: left; display: inline-block;">
+                        <li>🏫 Nome da escola</li>
+                        <li>🚍 Placa do ônibus</li>
+                        <li>📅 Período (data de início e fim)</li>
+                        <li>🧑‍💼 Nome do responsável pelo preenchimento</li>
+                        <li>🖼️ Imagem do comprovante de frequência</li>
+                    </ul>
+                    <p>
+                        ⚠️ <strong>Importante:</strong> Certifique-se de preencher todas as informações corretamente antes de salvar.<br>
+                        A tabela abaixo será atualizada com os dados informados após o envio. 
+                    </p>
+
+                        
+                        <!-- Botão para abrir o formulário -->
+                        <button onclick="document.getElementById('freqForm').style.display='block'" class="btn btn-primary">
+                            <i class="fa-solid fa-plus"></i> Nova Frequência
+                        </button>
+
+                        <!-- Formulário (inicialmente oculto) -->
+                        <!-- Formulário (compacto) -->
+                    <form id="freqForm" style="display:none; margin-top: 20px;" onsubmit="submitFrequencyForm(event)">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="escola">Escola:</label>
+                                <input type="text" id="escola" class="form-control form-control-sm" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="placa">Placa do ônibus:</label>
+                                <input type="text" id="placa" class="form-control form-control-sm" required>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="dataInicio">Do dia:</label>
+                                <input type="date" id="dataInicio" class="form-control form-control-sm" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="dataFim">Até o dia:</label>
+                                <input type="date" id="dataFim" class="form-control form-control-sm" required>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="feitoPor">Feito por:</label>
+                                <input type="text" id="feitoPor" class="form-control form-control-sm" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="imagem">Imagem da frequência:</label>
+                                <input type="file" id="imagem" class="form-control form-control-sm" accept="image/*" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-success btn-sm mt-2">Salvar</button>
+                    </form>
+
+
+                        <!-- Tabela de registros (sempre visível) -->
+                        <table id="freqTable" class="table table-bordered table-striped mt-4">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Escola</th>
+                                    <th>Placa</th>
+                                    <th>Período</th>
+                                    <th>Feito por</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
                     </div>
+
+                    <script>
+                    function submitFrequencyForm(event) {
+                        event.preventDefault();
+
+                        const escola = document.getElementById('escola').value;
+                        const placa = document.getElementById('placa').value;
+                        const dataInicio = document.getElementById('dataInicio').value;
+                        const dataFim = document.getElementById('dataFim').value;
+                        const feitoPor = document.getElementById('feitoPor').value;
+
+                        const tbody = document.getElementById('freqTable').querySelector('tbody');
+                        const tr = document.createElement('tr');
+
+                        tr.innerHTML = `
+                            <td>${escola}</td>
+                            <td>${placa}</td>
+                            <td>${dataInicio} até ${dataFim}</td>
+                            <td>${feitoPor}</td>
+                        `;
+
+                        tbody.appendChild(tr);
+
+                        // Limpa o formulário
+                        document.getElementById('freqForm').reset();
+                        document.getElementById('freqForm').style.display = 'none';
+                    }
+                    </script>
+
 
 
 
