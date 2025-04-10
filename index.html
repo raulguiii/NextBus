@@ -44,6 +44,9 @@
                             <li class="sidebar-item">
                                 <a href="#" class="sidebar-link tab-link" data-tab="ChiozoOcorrencias">ㅤㅤㅤ- Ocorrências </a>
                             </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link tab-link" data-tab="ChiozoFrequencia">ㅤㅤㅤ- Frequência</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="sidebar-item">
@@ -57,31 +60,8 @@
                             <li class="sidebar-item">
                                 <a href="#" class="sidebar-link tab-link" data-tab="ItaloAdamiOcorrencias">ㅤㅤㅤ- Ocorrências</a>
                             </li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed" data-bs-target="#JoaquimPerpetuo" data-bs-toggle="collapse">
-                            <i class="fa-solid fa-school pe-2"></i> <strong>EMEB JOAQUIM PERPÉTUO</strong>
-                        </a>
-                        <ul id="JoaquimPerpetuo" class="sidebar-dropdown list-unstyled collapse">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link tab-link" data-tab="JoaquimPerpetuoAlunos">ㅤㅤㅤ- Alunos</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link tab-link" data-tab="JoaquimPerpetuoOcorrencias">ㅤㅤㅤ- Ocorrências</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed" data-bs-target="#MichelAlves" data-bs-toggle="collapse">
-                            <i class="fa-solid fa-school pe-2"></i> <strong>EMEB MICHEL ALVES</strong>
-                        </a>
-                        <ul id="MichelAlves" class="sidebar-dropdown list-unstyled collapse">
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link tab-link" data-tab="MichelAlvesAlunos">ㅤㅤㅤ- Alunos</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link tab-link" data-tab="MichelAlvesOcorrencias">ㅤㅤㅤ- Ocorrências</a>
+                                <a href="#" class="sidebar-link tab-link" data-tab="ItaloAdamiFrequencia">ㅤㅤㅤ- Frequência</a>
                             </li>
                         </ul>
                     </li>
@@ -102,6 +82,9 @@
                             </li>
                             <li class="sidebar-item">
                                 <a href="#" class="sidebar-link tab-link" data-tab="BeneditoVieiraOcorrencias">ㅤㅤㅤ- Ocorrências </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link tab-link" data-tab="BeneditoVieiraFrequencia">ㅤㅤㅤ- Frequência</a>
                             </li>
                         </ul>
                     </li>
@@ -543,6 +526,15 @@
                     </script>
 
 
+                    <!-- EMEB CHIOZO FREQUÊNCIA -->    
+                    <div id="ChiozoFrequencia" class="tab-pane fade">
+                        <h3>
+                            EMEB CHIOZO
+                        </h3>
+                    </div>
+
+
+
 
                     <!-- EMEB ITALO ADAMI -->
 
@@ -657,233 +649,16 @@
                     </div>
 
 
-
-                    <!-- EMEB JOAQUIM PERPÉTUO -->
-
-                    <!--EMEB JOAQUIM PERPÉTUO ALUNOS-->    
-                    <div id="JoaquimPerpetuoAlunos" class="tab-pane fade">
-                        <h3>🎉 Seja bem-vindo à Central de ônibus da EMEB Joaquim Perpétuo! 🏫🚌</h3>
-                        
-                        <p>
-                            Nesta central, você poderá visualizar todos os ônibus relacionados à <strong>EMEB Joaquim Perpétuo</strong> e acompanhar a lista de alunos transportados. 
-                            Atualmente, esta página apresenta <strong>quatro ônibus escolares</strong>, cada um com seus respectivos alunos.
-                        </p>
-
-                        <p><strong>🚍 Ônibus cadastrados:</strong></p>
-                        <ul>
-                            <li>🟡 <strong>FQJ-1215</strong></li>
-                            <li>🔵 <strong>VAW-1243</strong></li>
-                            <li>🟢 <strong>VCA-0183</strong></li>
-                            <li>🔴 <strong>CVB-8642</strong></li>
-                        </ul>
-
-                        <p>
-                            Além da visualização, aqui você também pode <strong>adicionar, remover e mover alunos</strong> entre os ônibus, garantindo um melhor gerenciamento do transporte escolar.
-                        </p>
-
-                        <p><strong>🚀 Facilidade e controle na palma da sua mão!</strong></p>  
-                        
-                        
-                        <!-- Imagem como botão de colapso -->
-                        <img src="#" 
-                            alt=" Foto do Ônibus Escolar junto com a placa"
-                            class="img-fluid w-100"
-                            style="cursor: pointer; max-height: 200px; object-fit: cover; "
-                            onclick="toggleCollapseJoaquim()">
-                        
-                        <!-- Tabela dentro do colapso -->
-                        <div id="JoaquimTable" class="collapse">
-                            <div class="table-responsive">
-                            <table class="table table-bordered mt-3">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>Nome</th>
-                                        <th>Responsável</th>
-                                        <th>Telefone</th>
-                                        <th>Endereço</th>
-                                        <th>Idade</th>
-                                        <th>Série</th>
-                                        <th>Período</th>
-                                        <th>Ação</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>João Silva</td>
-                                        <td>Nelci Fernandes</td>
-                                        <td>(11) 98765-4321</td>
-                                        <td>Rua das Flores, 123</td>
-                                        <td>10 anos</td>
-                                        <td>5ª Série</td>
-                                        <td>Matutino</td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm border-0 p-0" onclick="confirmarRemocao('João Silva', this)">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </button>
-                                        </td>                                  
-                                    </tr>
-                                    <tr>
-                                        <td>Maria Oliveira</td>
-                                        <td>Paulo Oliveira</td>
-                                        <td>(21) 99876-5432</td>
-                                        <td>Avenida Central, 456</td>
-                                        <td>11 anos</td>
-                                        <td>6ª Série</td>
-                                        <td>Vespertino</td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm border-0 p-0" onclick="confirmarRemocao('João Silva', this)">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Carlos Souza</td>
-                                        <td>Renata Souza</td>
-                                        <td>(31) 91234-5678</td>
-                                        <td>Travessa Azul, 789</td>
-                                        <td>12 anos</td>
-                                        <td>7ª Série</td>
-                                        <td>Noturno</td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm border-0 p-0" onclick="confirmarRemocao('João Silva', this)">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>    
-                    </div>
-                </div>
-
-                    <script>
-                        function toggleCollapseJoaquim() {
-                            let table = document.getElementById("JoaquimTable");
-                            table.classList.toggle("show");
-                        }
-                    </script>
- 
-                    <!-- EMEB JOAQUIM PERPÉTUO OCORRÊNCIAS -->    
-                    <div id="JoaquimPerpetuoOcorrencias" class="tab-pane fade">
+                    <!-- EMEB ITALO ADAMI FREQUÊNCIA -->    
+                    <div id="ItaloAdamiFrequencia" class="tab-pane fade">
                         <h3>
-                            EMEB JOAQUIM PERPÉTUO
+                            EMEB ITALO ADAMI
                         </h3>
                     </div>
 
 
 
-                    <!-- EMEB MICHEL ALVES -->
-
-                    <!--EMEB MICHEL ALVES ALUNOS-->    
-                    <div id="MichelAlvesAlunos" class="tab-pane fade">
-                        <h3>🎉 Seja bem-vindo à Central de ônibus da EMEB Michel Alves! 🏫🚌</h3>
-                        
-                        <p>
-                            Nesta central, você poderá visualizar todos os ônibus relacionados à <strong>EMEB Michel Alves</strong> e acompanhar a lista de alunos transportados. 
-                            Atualmente, esta página apresenta <strong>quatro ônibus escolares</strong>, cada um com seus respectivos alunos.
-                        </p>
-
-                        <p><strong>🚍 Ônibus cadastrados:</strong></p>
-                        <ul>
-                            <li>🟡 <strong>FQJ-1215</strong></li>
-                            <li>🔵 <strong>VAW-1243</strong></li>
-                            <li>🟢 <strong>VCA-0183</strong></li>
-                            <li>🔴 <strong>CVB-8642</strong></li>
-                        </ul>
-
-                        <p>
-                            Além da visualização, aqui você também pode <strong>adicionar, remover e mover alunos</strong> entre os ônibus, garantindo um melhor gerenciamento do transporte escolar.
-                        </p>
-
-                        <p><strong>🚀 Facilidade e controle na palma da sua mão!</strong></p>  
-                        
-                        
-                        <!-- Imagem como botão de colapso -->
-                        <img src="#" 
-                            alt=" Foto do Ônibus Escolar junto com a placa"
-                            class="img-fluid w-100"
-                            style="cursor: pointer; max-height: 200px; object-fit: cover; "
-                            onclick="toggleCollapseMichel()">
-                        
-                        <!-- Tabela dentro do colapso -->
-                        <div id="MichelTable" class="collapse">
-                            <div class="table-responsive">
-                            <table class="table table-bordered mt-3">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>Nome</th>
-                                        <th>Responsável</th>
-                                        <th>Telefone</th>
-                                        <th>Endereço</th>
-                                        <th>Idade</th>
-                                        <th>Série</th>
-                                        <th>Período</th>
-                                        <th>Ação</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>João Silva</td>
-                                        <td>Nelci Fernandes</td>
-                                        <td>(11) 98765-4321</td>
-                                        <td>Rua das Flores, 123</td>
-                                        <td>10 anos</td>
-                                        <td>5ª Série</td>
-                                        <td>Matutino</td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm border-0 p-0" onclick="confirmarRemocao('João Silva', this)">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Maria Oliveira</td>
-                                        <td>Paulo Oliveira</td>
-                                        <td>(21) 99876-5432</td>
-                                        <td>Avenida Central, 456</td>
-                                        <td>11 anos</td>
-                                        <td>6ª Série</td>
-                                        <td>Vespertino</td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm border-0 p-0" onclick="confirmarRemocao('João Silva', this)">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Carlos Souza</td>
-                                        <td>Renata Souza</td>
-                                        <td>(31) 91234-5678</td>
-                                        <td>Travessa Azul, 789</td>
-                                        <td>12 anos</td>
-                                        <td>7ª Série</td>
-                                        <td>Noturno</td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm border-0 p-0" onclick="confirmarRemocao('João Silva', this)">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>    
-                    </div>
-                </div>
-
-                    <script>
-                        function toggleCollapseMichel() {
-                            let table = document.getElementById("MichelTable");
-                            table.classList.toggle("show");
-                        }
-                    </script>                  
                     
- 
-                    <!-- EMEB MICHEL ALVES OCORRÊNCIAS -->    
-                    <div id="MichelAlvesOcorrencias" class="tab-pane fade">
-                        <h3>
-                            EMEB MICHEL ALVES a
-                        </h3>
-                    </div>
             </div>   
 </div>
         </div>
