@@ -65,31 +65,7 @@
                             </li>
                         </ul>
                     </li>
-                </ul>
-                
-                
-                <ul class="sidebar-nav">
-                    <li class="sidebar-header">E.M</li>
-                
-                    <!--E.M.A-->
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed" data-bs-target="#BeneditoVieira" data-bs-toggle="collapse">
-                            <i class="fa-solid fa-school pe-2"></i> <strong>E.M Benedito Vieira</strong>
-                        </a>
-                        <ul id="BeneditoVieira" class="sidebar-dropdown list-unstyled collapse">
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link tab-link" data-tab="BeneditoVieiraAlunos">ㅤㅤㅤ- Alunos </a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link tab-link" data-tab="BeneditoVieiraOcorrencias">ㅤㅤㅤ- Ocorrências </a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link tab-link" data-tab="BeneditoVieiraFrequencia">ㅤㅤㅤ- Frequência</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>  
-
+                </ul> 
             </div>
         </aside>
         
@@ -193,7 +169,7 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="info-pages mb-7">
-                                    <h3 class=""><strong>TRANSPORTE ESCOLAR</strong></h3>
+                                    <h3 class=""><strong>🚍 TRANSPORTE ESCOLAR</strong></h3>
                                     <p class="h6">NextBus /<span> Início</span></p>
                                 </div>
                                 
@@ -542,8 +518,10 @@
                         <li>🖼️ Imagem do comprovante de frequência</li>
                     </ul>
                     <p>
-                        ⚠️ <strong>Importante:</strong> Certifique-se de preencher todas as informações corretamente antes de salvar.<br>
-                        A tabela abaixo será atualizada com os dados informados após o envio. 
+                        ⚠️ <strong>Importante:</strong> <br>
+                        - Certifique-se de preencher todas as informações corretamente antes de salvar.<br>
+                        - A tabela abaixo será atualizada com os dados informados após o envio.<br>
+                        - Após uma semana do envio os dados somem, e as imagens ficam disponíveis apenas no drive.
                     </p>
 
                         
@@ -745,18 +723,214 @@
  
                     <!-- EMEB ITALO ADAMI OCORRÊNCIAS -->    
                     <div id="ItaloAdamiOcorrencias" class="tab-pane fade">
-                        <h3>
-                            EMEB ITALO ADAMI
-                        </h3>
+                        <h3>📌 Ocorrências - EMEB Italo Adami</h3>
+                        <p>
+                            Bem-vindo à <strong>Central de Ocorrências</strong> da <strong>EMEB Italo Adami</strong>! 🎓🚌<br>
+                            Aqui você pode registrar e consultar ocorrências no transporte escolar:
+                        </p>
+                        <ul style="text-align: left; display: inline-block;">
+                            <li>🚌 Ônibus quebrado</li>
+                            <li>⏳ Atraso excessivo</li>
+                            <li>⚠️ Ônibus não compareceu</li>
+                            <li>💡 Outros imprevistos</li>
+                        </ul>
+                        <p>
+                            ⚠️ <strong>Atenção:</strong> Informe a <strong>data e horário</strong> do ocorrido. Seja o mais claro possível!
+                        </p>
+                    
+                        <button class="btn btn-warning mb-3" onclick="exibirAlertOcorrenciaItalo()">
+                            <i class="fa-solid fa-plus"></i> Nova Ocorrência
+                        </button>
+                    
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Horário</th>
+                                        <th>Detalhes</th>
+                                        <th>Arquivo</th>
+                                        <th style="width: 40px;"><i class="fa-solid fa-spinner"></i></th>
+                                        <th style="width: 40px;"><i class="fa-solid fa-comment"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tabelaOcorrenciasItalo"></tbody>
+                            </table>
+                        </div>
                     </div>
+                    
+                    <!-- Modal de Nova Ocorrência -->
+                    <div id="alertOcorrenciaItalo" class="custom-alert">
+                        <div class="alert-content">
+                            <h4>Registrar Nova Ocorrência</h4>
+                            <form id="formOcorrenciaItalo">
+                                <label>Data:</label>
+                                <input type="date" id="dataItalo" class="form-control" required>
+                    
+                                <label>Horário:</label>
+                                <input type="time" id="horarioItalo" class="form-control" required>
+                    
+                                <label>Detalhes:</label>
+                                <textarea id="detalhesItalo" class="form-control" rows="3" required></textarea>
+                    
+                                <label>Arquivo (opcional):</label>
+                                <input type="file" id="arquivoItalo" class="form-control">
+                    
+                                <div class="d-flex justify-content-between mt-3">
+                                    <button type="button" class="btn btn-secondary" onclick="fecharAlertOcorrenciaItalo()">Cancelar</button>
+                                    <button type="submit" class="btn btn-warning">Salvar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <script>
+                        function exibirAlertOcorrenciaItalo() {
+                            document.getElementById('alertOcorrenciaItalo').style.display = 'block';
+                        }
+                    
+                        function fecharAlertOcorrenciaItalo() {
+                            document.getElementById('alertOcorrenciaItalo').style.display = 'none';
+                        }
+                    
+                        document.getElementById("formOcorrenciaItalo").addEventListener("submit", function(event) {
+                            event.preventDefault();
+                    
+                            let data = document.getElementById("dataItalo").value;
+                            let horario = document.getElementById("horarioItalo").value;
+                            let detalhes = document.getElementById("detalhesItalo").value;
+                            let arquivoInput = document.getElementById("arquivoItalo");
+                    
+                            let arquivoLink = "Nenhum arquivo";
+                            if (arquivoInput.files.length > 0) {
+                                let arquivo = arquivoInput.files[0];
+                                let urlTemporaria = URL.createObjectURL(arquivo);
+                                arquivoLink = `<a href="${urlTemporaria}" target="_blank">${arquivo.name}</a>`;
+                            }
+                    
+                            if (data && horario && detalhes) {
+                                let dataBR = data.split("-").reverse().join("/");
+                    
+                                let tabela = document.getElementById("tabelaOcorrenciasItalo");
+                                let novaLinha = tabela.insertRow();
+                    
+                                novaLinha.innerHTML = `
+                                    <td>${dataBR}</td>
+                                    <td>${horario}</td>
+                                    <td>${detalhes}</td>
+                                    <td>${arquivoLink}</td>
+                                    <td><i class="fa-solid fa-x text-danger" style="cursor: pointer;" onclick="alternarStatus(this)" title="Em andamento"></i></td>
+                                    <td><i class="fa-solid fa-comment text-primary" style="cursor: pointer;" onclick="abrirComentarios(this)"></i></td>
+                                `;
+                    
+                                fecharAlertOcorrenciaItalo();
+                                document.getElementById("formOcorrenciaItalo").reset();
+                            }
+                        });
+                    </script>
 
 
                     <!-- EMEB ITALO ADAMI FREQUÊNCIA -->    
                     <div id="ItaloAdamiFrequencia" class="tab-pane fade">
-                        <h3>
-                            EMEB ITALO ADAMI
-                        </h3>
+                        <h3>📌 Frequência - EMEB Italo Adami</h3>
+                        <p>
+                            Aqui você pode registrar as frequências do transporte escolar da <strong>EMEB Italo Adami</strong>. Preencha:
+                        </p>
+                        <ul style="text-align: left; display: inline-block;">
+                            <li>🏫 Nome da escola</li>
+                            <li>🚍 Placa do ônibus</li>
+                            <li>📅 Período</li>
+                            <li>🧑‍💼 Nome do responsável</li>
+                            <li>🖼️ Imagem da frequência</li>
+                        </ul>
+                    
+                        <p>
+                            ⚠️ <strong>Importante:</strong> <br>
+                            - Certifique-se de preencher todas as informações corretamente antes de salvar.<br>
+                            - A tabela abaixo será atualizada com os dados informados após o envio.<br>
+                            - Após uma semana do envio os dados somem, e as imagens ficam disponíveis apenas no drive.
+                        </p>
+    
+                            
+                            <!-- Botão para abrir o formulário -->
+                            <button onclick="document.getElementById('freqFormItalo').style.display='block'" class="btn btn-primary">
+                                <i class="fa-solid fa-plus"></i> Nova Frequência
+                            </button>
+                    
+                        <form id="formFreqItalo" style="display:none; margin-top: 20px;" onsubmit="submitFreqItalo(event)">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="escolaItalo">Escola:</label>
+                                    <input type="text" id="escolaItalo" class="form-control" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="placaItalo">Placa do ônibus:</label>
+                                    <input type="text" id="placaItalo" class="form-control" required>
+                                </div>
+                            </div>
+                    
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="inicioItalo">Do dia:</label>
+                                    <input type="date" id="inicioItalo" class="form-control" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="fimItalo">Até o dia:</label>
+                                    <input type="date" id="fimItalo" class="form-control" required>
+                                </div>
+                            </div>
+                    
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="responsavelItalo">Feito por:</label>
+                                    <input type="text" id="responsavelItalo" class="form-control" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="imgFreqItalo">Imagem da frequência:</label>
+                                    <input type="file" id="imgFreqItalo" class="form-control" accept="image/*" required>
+                                </div>
+                            </div>
+                    
+                            <button type="submit" class="btn btn-success mt-2">Salvar</button>
+                        </form>
+                    
+                        <table id="tabelaFreqItalo" class="table table-bordered table-striped mt-4">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Escola</th>
+                                    <th>Placa</th>
+                                    <th>Período</th>
+                                    <th>Feito por</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
                     </div>
+                    <script>
+                        function submitFreqItalo(event) {
+                            event.preventDefault();
+                    
+                            const escola = document.getElementById('escolaItalo').value;
+                            const placa = document.getElementById('placaItalo').value;
+                            const inicio = document.getElementById('inicioItalo').value;
+                            const fim = document.getElementById('fimItalo').value;
+                            const responsavel = document.getElementById('responsavelItalo').value;
+                    
+                            const tbody = document.getElementById('tabelaFreqItalo').querySelector('tbody');
+                            const tr = document.createElement('tr');
+                    
+                            tr.innerHTML = `
+                                <td>${escola}</td>
+                                <td>${placa}</td>
+                                <td>${inicio} até ${fim}</td>
+                                <td>${responsavel}</td>
+                            `;
+                    
+                            tbody.appendChild(tr);
+                    
+                            document.getElementById('formFreqItalo').reset();
+                            document.getElementById('formFreqItalo').style.display = 'none';
+                        }
+                    </script>
 
 
 
