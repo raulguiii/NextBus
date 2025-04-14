@@ -705,8 +705,9 @@
                                     <th>Placa</th>
                                     <th>Período</th>
                                     <th>Feito por</th>
+                                    <th>Imagem</th> <!-- ✅ nova coluna -->
                                 </tr>
-                            </thead>
+                            </thead>                            
                             <tbody></tbody>
                         </table>
                     </div>
@@ -720,24 +721,28 @@
                         const dataInicio = document.getElementById('dataInicio').value;
                         const dataFim = document.getElementById('dataFim').value;
                         const feitoPor = document.getElementById('feitoPor').value;
+                        const imagemInput = document.getElementById('imagem');
+                        const imagem = imagemInput.files[0];
 
-                        // Converte as datas para o formato brasileiro (dd/mm/aaaa)
                         const dataInicioFormatada = formatarDataBrasileira(dataInicio);
                         const dataFimFormatada = formatarDataBrasileira(dataFim);
 
                         const tbody = document.getElementById('freqTable').querySelector('tbody');
                         const tr = document.createElement('tr');
 
+                        // Gera URL temporária da imagem para visualização
+                        const imagemURL = URL.createObjectURL(imagem);
+
                         tr.innerHTML = `
                             <td>${escola}</td>
                             <td>${placa}</td>
                             <td>${dataInicioFormatada} até ${dataFimFormatada}</td>
                             <td>${feitoPor}</td>
+                            <td><a href="${imagemURL}" target="_blank">📷 Ver imagem</a></td>
                         `;
 
                         tbody.appendChild(tr);
 
-                        // Limpa o formulário
                         document.getElementById('freqForm').reset();
                         document.getElementById('freqForm').style.display = 'none';
                     }
@@ -1127,6 +1132,7 @@
                                     <th>Placa</th>
                                     <th>Período</th>
                                     <th>Feito por</th>
+                                    <th>Imagem</th>
                                 </tr>
                             </thead>
                             <tbody></tbody>
@@ -1135,33 +1141,39 @@
                     <script>
                         function submitFreqItalo(event) {
                             event.preventDefault();
-                    
+
                             const escola = document.getElementById('escolaItalo').value;
                             const placa = document.getElementById('placaItalo').value;
                             const inicio = document.getElementById('inicioItalo').value;
                             const fim = document.getElementById('fimItalo').value;
                             const responsavel = document.getElementById('responsavelItalo').value;
-                    
+                            const imagemInput = document.getElementById('imgFreqItalo');
+                            const imagem = imagemInput.files[0];
+
                             // Formata as datas
                             const inicioFormatado = formatarDataBrasileira(inicio);
                             const fimFormatado = formatarDataBrasileira(fim);
-                    
+
                             const tbody = document.getElementById('tabelaFreqItalo').querySelector('tbody');
                             const tr = document.createElement('tr');
-                    
+
+                            // Cria um URL temporário da imagem para visualização
+                            const imagemURL = URL.createObjectURL(imagem);
+
                             tr.innerHTML = `
                                 <td>${escola}</td>
                                 <td>${placa}</td>
                                 <td>${inicioFormatado} até ${fimFormatado}</td>
                                 <td>${responsavel}</td>
+                                <td><a href="${imagemURL}" target="_blank">📷 Ver imagem</a></td>
                             `;
-                    
+
                             tbody.appendChild(tr);
-                    
+
                             document.getElementById('formFreqItalo').reset();
                             document.getElementById('formFreqItalo').style.display = 'none';
                         }
-                    
+
                         function cancelarFormFreqItalo() {
                             document.getElementById('formFreqItalo').reset();
                             document.getElementById('formFreqItalo').style.display = 'none';
