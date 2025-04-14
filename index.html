@@ -14,6 +14,12 @@
 </head>
 
 <body>
+    <script>
+        // Verifica se o usuário está logado
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+          window.location.href = "login.html";
+        }
+      </script>
     <div class="wrapper">
         <aside id="sidebar" class="js-sidebar">
             <div class="h-100">
@@ -130,13 +136,13 @@
             </nav>                                    
             <script>
                 document.addEventListener("DOMContentLoaded", function () {
+                    // Ícones de notificação (já estava funcionando)
                     document.querySelectorAll(".fa-exclamation-circle").forEach(icon => {
                         icon.addEventListener("click", function () {
                             let notification = this.closest(".d-flex.align-items-start");
                             if (notification) {
                                 notification.remove();
             
-                                // Atualiza o contador de notificações
                                 let badge = document.querySelector(".badge.bg-danger");
                                 if (badge) {
                                     let count = parseInt(badge.textContent, 10);
@@ -150,12 +156,18 @@
                             }
                         });
                     });
+            
+                    // Botão de logout
+                    const logoutLink = document.getElementById("logout-link");
+                    if (logoutLink) {
+                        logoutLink.addEventListener("click", function(event) {
+                            event.preventDefault();
+                            localStorage.removeItem("isLoggedIn"); // Remove o status de login
+                            window.location.href = "login.html";   // Redireciona para login
+                        });
+                    }
                 });
-                document.getElementById("logout-link").addEventListener("click", function(event) {
-                event.preventDefault(); // Evita o comportamento padrão do link
-                window.location.href = "login.html"; // Redireciona para a página de login
-            });
-            </script>
+            </script> 
 
 
             <!-- Conteúdo das Abas -->
