@@ -121,7 +121,7 @@
                                 <img src="static/img/user.png" class="avatar img-fluid rounded" alt="" style="width: 32px; height: 32px;">
                             </a>
                             <div class="d-flex flex-column">
-                                <span class="fw-bold" style="font-size: 16px;">Raul Guilherme</span>
+                                <span class="fw-bold" style="font-size: 16px;">Valter Junior</span>
                                 <span class="text-muted" style="font-size: 12px;">Admin</span>
                             </div>                            
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0 ms-2">
@@ -721,13 +721,17 @@
                         const dataFim = document.getElementById('dataFim').value;
                         const feitoPor = document.getElementById('feitoPor').value;
 
+                        // Converte as datas para o formato brasileiro (dd/mm/aaaa)
+                        const dataInicioFormatada = formatarDataBrasileira(dataInicio);
+                        const dataFimFormatada = formatarDataBrasileira(dataFim);
+
                         const tbody = document.getElementById('freqTable').querySelector('tbody');
                         const tr = document.createElement('tr');
 
                         tr.innerHTML = `
                             <td>${escola}</td>
                             <td>${placa}</td>
-                            <td>${dataInicio} até ${dataFim}</td>
+                            <td>${dataInicioFormatada} até ${dataFimFormatada}</td>
                             <td>${feitoPor}</td>
                         `;
 
@@ -737,10 +741,16 @@
                         document.getElementById('freqForm').reset();
                         document.getElementById('freqForm').style.display = 'none';
                     }
+
+                    function formatarDataBrasileira(dataISO) {
+                        const [ano, mes, dia] = dataISO.split("-");
+                        return `${dia}/${mes}/${ano}`;
+                    }
+
                     function cancelarFormulario() {
-                    document.getElementById('freqForm').reset();
-                    document.getElementById('freqForm').style.display = 'none';
-                }
+                        document.getElementById('freqForm').reset();
+                        document.getElementById('freqForm').style.display = 'none';
+                    }
                     </script>
 
 
@@ -1132,13 +1142,17 @@
                             const fim = document.getElementById('fimItalo').value;
                             const responsavel = document.getElementById('responsavelItalo').value;
                     
+                            // Formata as datas
+                            const inicioFormatado = formatarDataBrasileira(inicio);
+                            const fimFormatado = formatarDataBrasileira(fim);
+                    
                             const tbody = document.getElementById('tabelaFreqItalo').querySelector('tbody');
                             const tr = document.createElement('tr');
                     
                             tr.innerHTML = `
                                 <td>${escola}</td>
                                 <td>${placa}</td>
-                                <td>${inicio} até ${fim}</td>
+                                <td>${inicioFormatado} até ${fimFormatado}</td>
                                 <td>${responsavel}</td>
                             `;
                     
@@ -1147,11 +1161,18 @@
                             document.getElementById('formFreqItalo').reset();
                             document.getElementById('formFreqItalo').style.display = 'none';
                         }
+                    
                         function cancelarFormFreqItalo() {
-                        document.getElementById('formFreqItalo').reset();
-                        document.getElementById('formFreqItalo').style.display = 'none';
-                    }
+                            document.getElementById('formFreqItalo').reset();
+                            document.getElementById('formFreqItalo').style.display = 'none';
+                        }
+                    
+                        function formatarDataBrasileira(dataISO) {
+                            const [ano, mes, dia] = dataISO.split("-");
+                            return `${dia}/${mes}/${ano}`;
+                        }
                     </script>
+                    
 
 
 
