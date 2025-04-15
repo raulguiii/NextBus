@@ -15,11 +15,19 @@
 
 <body>
     <script>
-        // Verifica se o usuário está logado
-        if (localStorage.getItem("isLoggedIn") !== "true") {
-          window.location.href = "login.html";
+        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        const loginTime = parseInt(localStorage.getItem("loginTime"), 10);
+        const currentTime = Date.now();
+    
+        const FIFTEEN_MINUTES = 15 * 60 * 1000; // 15 minutos em milissegundos
+    
+        if (!isLoggedIn || isNaN(loginTime) || (currentTime - loginTime > FIFTEEN_MINUTES)) {
+            // Desloga e redireciona se o tempo passou ou se login é inválido
+            localStorage.removeItem("isLoggedIn");
+            localStorage.removeItem("loginTime");
+            window.location.href = "login.html";
         }
-      </script>
+    </script>    
     <div class="wrapper">
         <aside id="sidebar" class="js-sidebar">
             <div class="h-100">
